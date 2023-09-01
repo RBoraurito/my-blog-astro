@@ -1,16 +1,14 @@
-import Link from 'next/link'
-
-import { Container } from 'components/Container'
-import { ReactNode } from 'react'
+import { Container } from '../components/Container.tsx'
+import { type ReactNode } from 'react'
 
 function NavLink({ href, children }: {href: string, children: ReactNode}) {
   return (
-    <Link
+    <a
       href={href}
       className="transition hover:text-blue-500 dark:hover:text-blue-400"
     >
       {children}
-    </Link>
+    </a>
   )
 }
 
