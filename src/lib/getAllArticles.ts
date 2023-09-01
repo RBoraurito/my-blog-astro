@@ -6,6 +6,7 @@ export interface Article extends MetaData {
   title: string;
   description: string;
   content: string;
+  publishDate: string;
 }
 
 export async function importArticle(articleFilename: string): Promise<Article> {
