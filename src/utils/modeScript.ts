@@ -1,4 +1,3 @@
-export const modeScript = `
 let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
 updateMode()
@@ -31,4 +30,3 @@ function updateModeWithoutTransitions() {
   disableTransitionsTemporarily()
   updateMode()
 }
-`
