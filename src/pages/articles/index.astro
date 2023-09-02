@@ -1,0 +1,28 @@
+---
+import Article from '../../components/articles/Article.astro'
+import { SimpleLayout } from '../../components/SimpleLayout'
+import { getAllArticles } from '../../lib/getAllArticles'
+
+import { frontmatter as content } from '../../content/en/articles.md'
+import type { ArticlesPage } from '../../types/articles'
+import type { Article as IArticle } from '../../lib/getAllArticles'
+import Layout from '../../layouts/layout.astro'
+
+const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
+
+const articles = (await Astro.glob('../../content/en/posts/*.md')).slice(0, 4).map(({ frontmatter, Content }) => ({...frontmatter, content: Content})) as unknown as IArticle[]
+---
+<Layout title={metaTitle} description={metaDescription} image={metaImage}>
+  <SimpleLayout
+    title={title}
+    intro={description}
+  >
+    <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div class="flex max-w-3xl flex-col space-y-16">
+        {articles.map((article) => (
+          <Article article={article} />
+        ))}
+      </div>
+    </div>
+  </SimpleLayout>
+</Layout>

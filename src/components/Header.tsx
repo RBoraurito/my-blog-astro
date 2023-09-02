@@ -18,7 +18,6 @@ interface HeaderProps {
 
 export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderProps) {
   let isHomePage = pathname === '/'
-  console.log(isHomePage)
 
   let headerRef = useRef(null)
   let avatarRef = useRef(null)
