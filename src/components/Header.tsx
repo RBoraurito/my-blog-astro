@@ -18,6 +18,7 @@ interface HeaderProps {
 
 export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderProps) {
   let isHomePage = pathname === '/'
+  console.log(isHomePage)
 
   let headerRef = useRef(null)
   let avatarRef = useRef(null)
@@ -161,9 +162,7 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
-                  {avatarMixed}
-                )}
+                {!isHomePage && avatarMixed}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
