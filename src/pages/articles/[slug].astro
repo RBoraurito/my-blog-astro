@@ -25,7 +25,7 @@ const meta: Omit<IArticle, 'content'> = {
 }
 ---
 <Layout title={meta.metaTitle} description={meta.metaDescription} image={meta.metaImage}>
-  <ArticleLayout meta={meta} isRssFeed={false} previousPathname="Articles">
+  <ArticleLayout meta={meta} isRssFeed={false} previousPathname="Articles" client:load>
     <div set:html={marked.parse(article.frontmatter.content)} />
   </ArticleLayout>
 </Layout>
