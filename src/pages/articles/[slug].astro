@@ -1,0 +1,31 @@
+---
+import { ArticleLayout } from "../../components/ArticleLayout"
+import Layout from "../../layouts/layout.astro"
+import { type Article as IArticle, getAllArticles, importArticle } from "../../lib/getAllArticles"
+import { marked } from "marked"
+
+export async function getStaticPaths() {
+  const articles = (await Astro.glob('../../content/en/posts/*.md'))
+  .map(({ file }) => ({params: {slug: file.split('/').at(-1).replace('.md', '')}})) as unknown as IArticle[]
+  return articles
+}
+
+const { slug } = Astro.params
+const article = await import(`../../content/en/posts/${slug}.md`)
+
+const meta: Omit<IArticle, 'content'> = {
+  slug: article.frontmatter.slug,
+  title: article.frontmatter.title,
+  description: article.frontmatter.description,
+  publishDate: article.frontmatter.publishDate,
+  metaTitle: article.frontmatter.metaTitle,
+  metaDescription: article.frontmatter.metaDescription,
+  metaImage: article.frontmatter.metaImage,
+  author: article.frontmatter.author,
+}
+---
+<Layout title={meta.metaTitle} description={meta.metaDescription} image={meta.metaImage}>
+  <ArticleLayout meta={meta} isRssFeed={false} previousPathname="Articles">
+    <div set:html={marked.parse(article.frontmatter.content)} />
+  </ArticleLayout>
+</Layout>

@@ -10,7 +10,7 @@ import Layout from '../../layouts/layout.astro'
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
 
-const articles = (await Astro.glob('../../content/en/posts/*.md')).slice(0, 4).map(({ frontmatter, Content }) => ({...frontmatter, content: Content})) as unknown as IArticle[]
+const articles = (await Astro.glob('../../content/en/posts/*.md')).map(({ frontmatter, Content, file }) => ({...frontmatter, content: Content, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
   <SimpleLayout
