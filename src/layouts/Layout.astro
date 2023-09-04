@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import AvatarContainer from '../components/Avatar.astro'
 import Avatar from '../components/Avatar.astro'
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -35,17 +36,18 @@ const siteUrl = import.meta.env.PUBLIC_URL
 			type="application/feed+json"
 			href={`${siteUrl}/rss/feed.json`}
 		/>
-		<script src="../utils/modeScript" />
+		<ViewTransitions />
 		<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
+		<script src="../utils/modeScript" />
 		<div class="fixed inset-0 flex justify-center sm:px-8">
 			<div class="flex w-full max-w-7xl lg:px-8">
 				<div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
 			</div>
 		</div>
 		<div class="relative">
-			<Header client:idle pathname={Astro.url.pathname}>
+			<Header client:load pathname={Astro.url.pathname}>
 				<AvatarContainer
 					slot="avatarContainer"
 					className="absolute left-0 top-3 origin-left transition-opacity"

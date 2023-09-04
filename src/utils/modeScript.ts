@@ -1,8 +1,10 @@
 let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
 updateMode()
 darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
 window.addEventListener('storage', updateModeWithoutTransitions)
+document.addEventListener('astro:after-swap', (e) => {
+  updateModeWithoutTransitions()
+})
 
 function updateMode() {
   let isSystemDarkMode = darkModeMediaQuery.matches
