@@ -2,18 +2,18 @@
 import clsx from 'clsx'
 import { Image } from 'astro:assets'
 
-import { Container } from '../components/Container'
+import { Container } from '@components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-} from '../components/SocialIcons'
-import { Mail } from '../components/icon/Mail'
-import Layout from '../layouts/layout.astro'
+} from '@components/SocialIcons'
+import { Mail } from '@components/icon/Mail'
+import Layout from '@layouts/layout.astro'
 
-import {frontmatter as content} from '../content/en/about-us.md'
-import type { AboutPage } from '../types/about'
+import {frontmatter as content} from '@content/en/about-us.md'
+import type { AboutPage } from '@types/about'
 import { marked } from 'marked'
-import { SocialLink } from '../components/about/SocialLink'
+import { SocialLink } from '@components/about/SocialLink'
 
 const { title, description, image, metaTitle, metaDescription, metaImage } = content as unknown as AboutPage
 ---

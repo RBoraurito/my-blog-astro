@@ -7,7 +7,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx(), tailwind(), NetlifyCMS({
+  integrations: [react(), mdx(), tailwind(), /*NetlifyCMS({
     config: {
       backend: {
         name: 'git-gateway',
@@ -153,6 +153,6 @@ export default defineConfig({
         }
       ],
     },
-  }),],
+  }),*/],
 
 });

@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/layout.astro";
+import Layout from "@layouts/layout.astro";
 
-import {frontmatter as content} from '../content/en/home.md'
+import {frontmatter as content} from '@content/en/home.md'
 import { marked } from 'marked'
-import type { Home } from '../types/home'
-import { Container } from "../components/Container";
-import { GitHubIcon, LinkedInIcon } from "../components/SocialIcons";
-import { Resume } from "../components/home/Resume";
-import { SocialLink } from "../components/home/SocialLink";
-import { Article } from "../components/home/Article";
+import type { Home } from '@types/home'
+import { Container } from "@components/Container";
+import { GitHubIcon, LinkedInIcon } from "@components/SocialIcons";
+import { Resume } from "@components/home/Resume";
+import { SocialLink } from "@components/home/SocialLink";
+import { Article } from "@components/home/Article";
 import type { Article as IArticle } from "../lib/getAllArticles";
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home

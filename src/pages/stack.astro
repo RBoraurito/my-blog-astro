@@ -1,13 +1,13 @@
 ---
-import Tool from '../components/stack/Tool.astro'
-import ToolsSection from '../components/stack/ToolsSection.astro'
-import { SimpleLayout } from '../components/SimpleLayout'
+import Tool from '@components/stack/Tool.astro'
+import ToolsSection from '@components/stack/ToolsSection.astro'
+import { SimpleLayout } from '@components/SimpleLayout'
 
-import { frontmatter as content } from '../content/en/stack.md'
-import { StackPage } from '../types/stack';
+import { frontmatter as content } from '@content/en/stack.md'
+import { StackPage } from '@types/stack';
 import { marked } from 'marked';
 import { markedUseLink } from '../utils/marked.use';
-import Layout from '../layouts/layout.astro';
+import Layout from '@layouts/layout.astro';
 
 markedUseLink(marked)
 
