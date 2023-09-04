@@ -6,7 +6,7 @@ metaDescription: I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m
   frameworks(Next.js, Nuxt.js, Remix), I love the JAMStack and decoupled
   architectures and have a deep interest in new tech and modern web
   development."
-metaImage: https://res.cloudinary.com/dzgf40ghh/image/upload/v1674951877/portrait_bq1urr.jpg
+metaImage: https://res.cloudinary.com/dzuuh1t88/image/upload/v1693854889/portrait_m3iav4.jpg
 title: Frontend Developer
 description: I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m
   Frontend Developer specialized in React, Vue.js and its meta
@@ -16,8 +16,14 @@ description: I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m
 jobs:
   - position: Frontend Developer
     isActual: true
+    startDate: 2023-06-01T19:24:29.598Z
+    endDate: 2023-09-04T19:24:29.609Z
+    company: Bejamas
+    image: https://res.cloudinary.com/dzuuh1t88/image/upload/v1693855499/bejamas_logo_b3bbo3.png
+  - position: Frontend Developer
+    isActual: false
     startDate: 2022-03-14T23:47:53.448Z
-    endDate: 2023-01-28T23:47:53.457Z
+    endDate: 2023-06-01T23:47:53.457Z
     company: Webcat, LLC
     image: https://res.cloudinary.com/dzgf40ghh/image/upload/v1674950125/webcat_m0dqm7.jpg
   - position: Frontend Developer
