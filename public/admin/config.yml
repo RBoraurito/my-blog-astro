@@ -9,8 +9,8 @@ public_folder: img
 media_library:
   name: cloudinary
   config:
-    cloud_name: dzgf40ghh
-    api_key: 958272413457741
+    cloud_name: dzuuh1t88
+    api_key: 137275731263763
 collections:
   - name: "pages"
     label: "Pages"
