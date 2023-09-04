@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ChevronRightIcon } from '../components/icon/ChevronRight'
+import { ChevronRightIcon } from '@components/icon/ChevronRight'
 import React, { type ReactNode } from 'react';
 
 interface CardProps {

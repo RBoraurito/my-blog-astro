@@ -1,8 +1,8 @@
 import { Popover, Transition } from "@headlessui/react"
 import { Fragment } from "react"
-import { ChevronDownIcon } from "../components/icon/ChevronDown"
-import { CloseIcon } from "../components/icon/Close"
-import { MobileNavItem, NavItem } from "../components/NavItem"
+import { ChevronDownIcon } from "@components/icon/ChevronDown"
+import { CloseIcon } from "@components/icon/Close"
+import { MobileNavItem, NavItem } from "@components/NavItem"
 
 export function MobileNavigation(props) {
   return (

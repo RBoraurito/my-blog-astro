@@ -1,4 +1,4 @@
-import { Container } from '../components/Container.tsx'
+import { Container } from '@components/Container.tsx'
 import { type ReactNode } from 'react'
 
 function NavLink({ href, children }: {href: string, children: ReactNode}) {

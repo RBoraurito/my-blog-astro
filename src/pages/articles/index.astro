@@ -1,12 +1,12 @@
 ---
 import Article from '@components/articles/Article.astro'
-import { SimpleLayout } from '@components/SimpleLayout'
-import { getAllArticles } from '../../lib/getAllArticles'
+import { SimpleLayout } from '@components/SimpleLayout.tsx'
+import { getAllArticles } from '../../lib/getAllArticles.ts'
 
 import { frontmatter as content } from '@content/en/articles.md'
-import type { ArticlesPage } from '@types/articles'
-import type { Article as IArticle } from '../../lib/getAllArticles'
-import Layout from '@layouts/layout.astro'
+import type { ArticlesPage } from '@types/articles.ts'
+import type { Article as IArticle } from '../../lib/getAllArticles.ts'
+import Layout from '@layouts/Default.astro'
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
 

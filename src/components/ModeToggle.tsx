@@ -1,5 +1,5 @@
-import { MoonIcon } from "../components/icon/Moon"
-import { SunIcon } from "../components/icon/Sun"
+import { MoonIcon } from "@components/icon/Moon"
+import { SunIcon } from "@components/icon/Sun"
 
 export function ModeToggle() {
   function disableTransitionsTemporarily() {

@@ -1,19 +1,19 @@
 ---
-import Layout from "@layouts/layout.astro";
+import Layout from "@layouts/Default.astro";
 
-import {frontmatter as content} from '@content/en/home.md'
-import { marked } from 'marked'
-import type { Home } from '@types/home'
-import { Container } from "@components/Container";
-import { GitHubIcon, LinkedInIcon } from "@components/SocialIcons";
-import { Resume } from "@components/home/Resume";
-import { SocialLink } from "@components/home/SocialLink";
-import { Article } from "@components/home/Article";
-import type { Article as IArticle } from "../lib/getAllArticles";
+import {frontmatter as content} from "@content/en/home.md"
+import { marked } from "marked"
+import type { Home } from "@types/home.ts"
+import { Container } from "@components/Container.tsx";
+import { GitHubIcon, LinkedInIcon } from "@components/SocialIcons.tsx";
+import { Resume } from "@components/home/Resume.tsx";
+import { SocialLink } from "@components/home/SocialLink.tsx";
+import { Article } from "@components/home/Article.tsx";
+import type { Article as IArticle } from "../lib/getAllArticles.ts";
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home
 
-const articles = (await Astro.glob('../content/en/posts/*.md')).slice(0, 4).map(({ frontmatter, file }) => ({...frontmatter, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
+const articles = (await Astro.glob("../content/en/posts/*.md")).slice(0, 4).map(({ frontmatter, file }) => ({...frontmatter, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
 
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage} >

@@ -1,5 +1,5 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
-import { Container } from '@components/Container'
+import { Container } from '@components/Container.tsx'
 
 const features = [
   {

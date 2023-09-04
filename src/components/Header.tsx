@@ -1,7 +1,7 @@
-import { Container } from '../components/Container'
+import { Container } from '@components/Container'
 import React, { CSSProperties, useEffect, useRef } from 'react'
 import { DesktopNavigation, MobileNavigation } from './Navigation'
-import { ModeToggle } from '../components/ModeToggle'
+import { ModeToggle } from '@components/ModeToggle'
 
 function clamp(number: number, a: number, b: number) {
   let min = Math.min(a, b)
