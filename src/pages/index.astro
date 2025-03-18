@@ -13,7 +13,7 @@ import type { Article as IArticle } from "../lib/getAllArticles.ts";
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home
 
-const articles = (await Astro.glob("../content/posts/*.md")).slice(0, 4).map(({ frontmatter, file }) => ({...frontmatter, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
+const articles = Object.values(import.meta.glob("../content/posts/*.md", { eager: true })).slice(0, 4).map(({ frontmatter, file }) => ({...frontmatter, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
 
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage} >

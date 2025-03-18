@@ -5,8 +5,7 @@ import { type Article as IArticle, getAllArticles, importArticle } from "../../l
 import { marked } from "marked"
 
 export async function getStaticPaths() {
-  const articles = (await Astro.glob('../../content/posts/*.md'))
-  .map(({ file }) => ({params: {slug: file.split('/').at(-1).replace('.md', '')}})) as unknown as IArticle[]
+  const articles = Object.values(import.meta.glob('../../content/posts/*.md', { eager: true })).map(({ file }) => ({params: {slug: file.split('/').at(-1).replace('.md', '')}})) as unknown as IArticle[]
   return articles
 }
 
