@@ -1,5 +1,5 @@
 import { Container } from '@components/Container'
-import React, { CSSProperties, useEffect, useRef } from 'react'
+import { useEffect, useRef, type CSSProperties } from 'react'
 import { DesktopNavigation, MobileNavigation } from './Navigation'
 import { ModeToggle } from '@components/ModeToggle'
 

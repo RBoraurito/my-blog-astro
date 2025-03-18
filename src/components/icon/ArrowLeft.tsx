@@ -1,4 +1,4 @@
-import React, {SVGAttributes } from 'react';
+import {type SVGAttributes } from 'react';
 
 export function ArrowLeftIcon(props: SVGAttributes<SVGElement>) {
   return (

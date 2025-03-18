@@ -1,4 +1,4 @@
-import React, { SVGAttributes } from 'react';
+import { type SVGAttributes } from 'react';
 
 export function ChevronRightIcon(props: SVGAttributes<SVGElement>) {
   return (
