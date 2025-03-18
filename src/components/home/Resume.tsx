@@ -2,7 +2,7 @@ import { Button } from "@components/Button"
 import { ArrowDownIcon } from "@components/icon/ArrowDown"
 import { BriefcaseIcon } from "@components/icon/Briefcase"
 
-import { frontmatter as content } from '../../content/en/home.md'
+import { frontmatter as content } from '../../content/home.md'
 import type { Home } from '../../types/home';
 import {format} from 'date-fns'
 import { JobDateFormat } from '../../values/dateFormats';
