@@ -37,7 +37,6 @@ const siteUrl = import.meta.env.PUBLIC_URL
 			href={`${siteUrl}/rss/feed.json`}
 		/>
 		<ViewTransitions />
-		<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
 		<script src="../utils/modeScript" />
@@ -54,13 +53,13 @@ const siteUrl = import.meta.env.PUBLIC_URL
 					style={{
 						opacity: 'var(--avatar-border-opacity, 0)',
 						transform: 'var(--avatar-border-transform)',
-					}}
+					} as astroHTML.JSX.CSSProperties}
 				/>
 				<Avatar
 					slot="avatar"
 					large
 					className="block h-16 w-16 origin-left"
-					style={{ transform: 'var(--avatar-image-transform)' }}
+					style={{ transform: 'var(--avatar-image-transform)' } as astroHTML.JSX.CSSProperties}
 				/>
 				<AvatarContainer slot="avatarMixed">
 					<Avatar />

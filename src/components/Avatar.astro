@@ -4,7 +4,7 @@ import {Image} from "astro:assets";
 import avatarImage from "../images/avatar.jpeg";
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<HTMLAnchorElement> {
+interface Props extends HTMLAttributes<'a'> {
   large?: boolean;
   className?: string;
 }
