@@ -1,19 +1,11 @@
-import { config, fields, collection } from '@keystatic/core';
+import { config } from '@keystatic/core';
+import { posts } from 'src/collections/posts';
 
 export default config({
   storage: {
     kind: 'local',
   },
   collections: {
-    posts: collection({
-      label: 'Posts',
-      slugField: 'title',
-      path: 'src/content/posts/*',
-      format: { contentField: 'content' },
-      schema: {
-        title: fields.slug({ name: { label: 'Title' } }),
-        content: fields.markdoc({ label: 'Content' }),
-      },
-    }),
+    posts,
   },
 });
