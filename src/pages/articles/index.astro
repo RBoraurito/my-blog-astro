@@ -2,7 +2,8 @@
 import Article from '@components/articles/Article.astro'
 import { SimpleLayout } from '@components/SimpleLayout.tsx'
 
-import { frontmatter as content } from '@content/articles.md'
+// @ts-expect-error yaml import
+import content from '@content/articles.yaml'
 import Layout from '@layouts/Default.astro'
 import type { ArticlesPage } from 'src/types/articles'
 import { getCollection } from 'astro:content'
