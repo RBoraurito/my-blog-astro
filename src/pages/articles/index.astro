@@ -11,8 +11,6 @@ import type { Article as IArticle } from 'src/lib/getAllArticles'
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
 
 const articles = await getCollection('posts')
-
-console.log(articles)
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
   <SimpleLayout

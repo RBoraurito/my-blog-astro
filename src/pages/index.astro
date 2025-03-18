@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Default.astro";
 
-import {frontmatter as content} from "@content/home.md"
+import content from "@content/home.yaml"
 import { marked } from "marked"
 import type { Home } from "src/types/home.ts"
 import { Container } from "@components/Container.tsx";
@@ -28,17 +28,16 @@ const articles = (await getCollection('posts')).slice(0, 4)
         <SocialLink
           href="https://github.com/RBoraurito"
           aria-label="Follow on GitHub"
-          icon={<GitHubIcon />}
+          icon={GitHubIcon}
         />
         <SocialLink
           href="https://www.linkedin.com/in/rboraure/"
           aria-label="Follow on LinkedIn"
-          icon={<LinkedInIcon/>}
+          icon={LinkedInIcon}
         />
       </div>
     </div>
   </Container>
-  {/* <Feature /> */}
   <Container className="mt-12 md:mt-14">
     <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
       <div class="flex flex-col gap-16">

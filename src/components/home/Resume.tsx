@@ -2,14 +2,16 @@ import { Button } from "@components/Button"
 import { ArrowDownIcon } from "@components/icon/ArrowDown"
 import { BriefcaseIcon } from "@components/icon/Briefcase"
 
-import { frontmatter as content } from '../../content/home.md'
+import content from '../../content/home.yaml'
 import type { Home } from '../../types/home';
 import {format} from 'date-fns'
 import { JobDateFormat } from '../../values/dateFormats';
 
 const { jobs } = content as unknown as Home
 
-const formatDate = (date: string) => format(new Date(date), JobDateFormat)
+const formatDate = (date: string) => {
+  console.log(new Date(date))
+  return format(new Date(date), JobDateFormat)}
 
 export function Resume() {
 
@@ -44,9 +46,13 @@ export function Resume() {
                   {formatDate(role.startDate)}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={new Date(role.endDate).toDateString()}>
-                  {formatDate(role.endDate)}
-                </time>
+                {role.isActual ? (
+                  <span>Current</span>
+                ) : (
+                  <time dateTime={new Date(role.endDate).toDateString()}>
+                    {formatDate(role.endDate)}
+                  </time>
+                )}
               </dd>
             </dl>
           </li>

@@ -30,7 +30,7 @@ export const posts = collection({
     title: fields.text({ label: 'Title', validation: {
       isRequired: true
     } }),
-    description: fields.text({ label: 'Title', validation: {
+    description: fields.text({ label: 'Description', validation: {
       isRequired: true
     } }),
     content: fields.markdoc({ label: 'Content' }),
