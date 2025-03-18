@@ -3,13 +3,16 @@ import Article from '@components/articles/Article.astro'
 import { SimpleLayout } from '@components/SimpleLayout.tsx'
 
 import { frontmatter as content } from '@content/articles.md'
-import type { ArticlesPage } from '@types/articles.ts'
-import type { Article as IArticle } from '../../lib/getAllArticles.ts'
 import Layout from '@layouts/Default.astro'
+import type { ArticlesPage } from 'src/types/articles'
+import { getCollection } from 'astro:content'
+import type { Article as IArticle } from 'src/lib/getAllArticles'
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
 
-const articles = Object.values(import.meta.glob('../../content/posts/*.md', { eager: true })).map(({ frontmatter, Content, file }) => ({...frontmatter, content: Content, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
+const articles = await getCollection('posts')
+
+console.log(articles)
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
   <SimpleLayout
@@ -19,7 +22,7 @@ const articles = Object.values(import.meta.glob('../../content/posts/*.md', { ea
     <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
       <div class="flex max-w-3xl flex-col space-y-16">
         {articles.map((article) => (
-          <Article article={article} />
+          <Article article={{...article.data, ...article} as IArticle} />
         ))}
       </div>
     </div>

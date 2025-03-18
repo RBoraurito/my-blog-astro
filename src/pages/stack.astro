@@ -4,10 +4,10 @@ import ToolsSection from "@components/stack/ToolsSection.astro"
 import { SimpleLayout } from "@components/SimpleLayout.tsx"
 
 import { frontmatter as content } from "@content/stack.md"
-import { StackPage } from "@types/stack.ts";
 import { marked } from 'marked';
 import { markedUseLink } from "../utils/marked.use.ts";
 import Layout from "@layouts/Default.astro";
+import type { StackPage } from "@type/stack";
 
 markedUseLink(marked)
 
