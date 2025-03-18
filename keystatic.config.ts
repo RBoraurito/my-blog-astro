@@ -1,5 +1,5 @@
 import { config } from '@keystatic/core';
-import { home, posts } from 'src/collections';
+import { home, posts, aboutUs } from 'src/collections';
 
 export default config({
   storage: {
@@ -9,6 +9,7 @@ export default config({
     posts,
   },
   singletons: {
-    home
+    home,
+    aboutUs
   }
 });

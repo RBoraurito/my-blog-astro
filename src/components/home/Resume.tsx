@@ -9,9 +9,7 @@ import { JobDateFormat } from '../../values/dateFormats';
 
 const { jobs } = content as unknown as Home
 
-const formatDate = (date: string) => {
-  console.log(new Date(date))
-  return format(new Date(date), JobDateFormat)}
+const formatDate = (date: string) => format(new Date(date), JobDateFormat)
 
 export function Resume() {
 
