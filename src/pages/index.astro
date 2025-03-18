@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Default.astro";
 
+// @ts-expect-error import yaml
 import content from "@content/home.yaml"
 import { marked } from "marked"
 import type { Home } from "src/types/home.ts"
@@ -13,7 +14,7 @@ import { getCollection } from "astro:content";
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home
 
-const articles = (await getCollection('posts')).slice(0, 4)
+const articles = (await getCollection('posts')).slice(0, 4) 
 
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage} >

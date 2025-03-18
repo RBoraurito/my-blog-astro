@@ -1,7 +1,7 @@
 import { Button } from "@components/Button"
 import { ArrowDownIcon } from "@components/icon/ArrowDown"
 import { BriefcaseIcon } from "@components/icon/Briefcase"
-
+// @ts-expect-error import yaml
 import content from '../../content/home.yaml'
 import type { Home } from '../../types/home';
 import {format} from 'date-fns'
