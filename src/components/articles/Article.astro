@@ -1,14 +1,15 @@
 ---
-import { Card } from '@components/Card'
-import { formatDate } from '../../lib/formatDate'
-import type { Article } from '../../lib/getAllArticles'
+import { Card } from "@components/Card";
+import { formatDate } from "../../lib/formatDate";
+import type { Article } from "../../lib/getAllArticles";
 
 interface Props {
-  article: Article
+  article: Article;
 }
 
-const {article} = Astro.props
+const { article } = Astro.props;
 ---
+
 <article class="md:grid md:grid-cols-4 md:items-baseline">
   <Card className="md:col-span-3">
     <Card.Title href={`/articles/${article.slug}`}>

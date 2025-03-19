@@ -1,9 +1,16 @@
-import { config } from '@keystatic/core';
-import { home, posts, aboutUs, stack, projects, articles } from "src/collections";
+import { config } from "@keystatic/core";
+import {
+  home,
+  posts,
+  aboutUs,
+  stack,
+  projects,
+  articles,
+} from "src/collections";
 
 export default config({
   storage: {
-    kind: 'local',
+    kind: "local",
   },
   collections: {
     posts,
@@ -13,6 +20,6 @@ export default config({
     aboutUs,
     stack,
     projects,
-    articles
-  }
+    articles,
+  },
 });

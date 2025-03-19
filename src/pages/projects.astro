@@ -1,14 +1,14 @@
 ---
-import Image from "@components/Image.astro"
+import Image from "@components/Image.astro";
 
-import { Card } from "@components/Card.tsx"
-import { SimpleLayout } from "@components/SimpleLayout.tsx"
-import { LinkIcon } from "@components/projects/LinkIcon.tsx"
+import { Card } from "@components/Card.tsx";
+import { SimpleLayout } from "@components/SimpleLayout.tsx";
+import { LinkIcon } from "@components/projects/LinkIcon.tsx";
 
 // @ts-expect-error import yaml
-import content from "@content/projects.yaml"
-import Layout from "@layouts/Default.astro"
-import type { ProjectsPage } from "src/types/projects"
+import content from "@content/projects.yaml";
+import Layout from "@layouts/Default.astro";
+import type { ProjectsPage } from "src/types/projects";
 
 const {
   metaTitle,
@@ -16,39 +16,46 @@ const {
   metaImage,
   title,
   description,
-  projects: projectList
-} = content as unknown as ProjectsPage
+  projects: projectList,
+} = content as unknown as ProjectsPage;
 ---
+
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
-  <SimpleLayout
-    title={title}
-    intro={description}
-  >
+  <SimpleLayout title={title} intro={description}>
     <ul
       role="list"
       class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {projectList.map((project) => (
-        <Card as="li">
-          <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-            <Image
-              src={project.image}
-              width={48}
-              height={48}
-              alt=""
-              class="h-8 w-8 rounded-full"
-            />
-          </div>
-          <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-            <Card.Link href={project.linkHref} target="_blank">{project.title}</Card.Link>
-          </h2>
-          <Card.Description>{project.description}</Card.Description>
-          <a href={project.linkHref} target="_blank" class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200" rel="noreferrer">
-            <LinkIcon className="h-6 w-6 flex-none" />
-            <span class="ml-2">{project.linkLabel}</span>
-          </a>
-        </Card>
-      ))}
+      {
+        projectList.map((project) => (
+          <Card as="li">
+            <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <Image
+                src={project.image}
+                width={48}
+                height={48}
+                alt=""
+                class="h-8 w-8 rounded-full"
+              />
+            </div>
+            <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <Card.Link href={project.linkHref} target="_blank">
+                {project.title}
+              </Card.Link>
+            </h2>
+            <Card.Description>{project.description}</Card.Description>
+            <a
+              href={project.linkHref}
+              target="_blank"
+              class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200"
+              rel="noreferrer"
+            >
+              <LinkIcon className="h-6 w-6 flex-none" />
+              <span class="ml-2">{project.linkLabel}</span>
+            </a>
+          </Card>
+        ))
+      }
     </ul>
   </SimpleLayout>
 </Layout>

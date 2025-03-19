@@ -16,5 +16,5 @@ export function SunIcon(props: SVGAttributes<SVGElement>) {
         fill="none"
       />
     </svg>
-  )
+  );
 }

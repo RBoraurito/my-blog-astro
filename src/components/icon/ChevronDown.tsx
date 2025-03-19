@@ -11,5 +11,5 @@ export function ChevronDownIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }

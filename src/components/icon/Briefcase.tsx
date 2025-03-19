@@ -20,5 +20,5 @@ export function BriefcaseIcon(props: SVGAttributes<SVGElement>) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }

@@ -10,5 +10,5 @@ export function ArrowDownIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }

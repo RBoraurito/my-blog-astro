@@ -10,5 +10,5 @@ export function MoonIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }

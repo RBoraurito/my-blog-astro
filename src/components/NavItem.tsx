@@ -1,25 +1,25 @@
-import { Popover } from "@headlessui/react"
-import clsx from "clsx"
-import { type ReactNode } from "react"
+import { Popover } from "@headlessui/react";
+import clsx from "clsx";
+import { type ReactNode } from "react";
 
 interface NavItemProps {
-  href: string,
-  children: ReactNode
+  href: string;
+  children: ReactNode;
 }
 
 export function NavItem({ href, children }: NavItemProps) {
-  const pathname = false
-  let isActive = pathname === href
+  const pathname = false;
+  let isActive = pathname === href;
 
   return (
     <li>
       <a
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          "relative block px-3 py-2 transition",
           isActive
-            ? 'text-blue-500 dark:text-blue-400'
-            : 'hover:text-blue-500 dark:hover:text-blue-400'
+            ? "text-blue-500 dark:text-blue-400"
+            : "hover:text-blue-500 dark:hover:text-blue-400",
         )}
       >
         {children}
@@ -28,7 +28,7 @@ export function NavItem({ href, children }: NavItemProps) {
         )}
       </a>
     </li>
-  )
+  );
 }
 
 export function MobileNavItem({ href, children }: NavItemProps) {
@@ -38,5 +38,5 @@ export function MobileNavItem({ href, children }: NavItemProps) {
         {children}
       </Popover.Button>
     </li>
-  )
+  );
 }

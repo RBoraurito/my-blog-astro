@@ -1,7 +1,7 @@
-import { Container } from '@components/Container.tsx'
-import { type ReactNode } from 'react'
+import { Container } from "@components/Container.tsx";
+import { type ReactNode } from "react";
 
-function NavLink({ href, children }: {href: string, children: ReactNode}) {
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
@@ -9,7 +9,7 @@ function NavLink({ href, children }: {href: string, children: ReactNode}) {
     >
       {children}
     </a>
-  )
+  );
 }
 
 export function Footer() {
@@ -34,5 +34,5 @@ export function Footer() {
         </div>
       </Container.Outer>
     </footer>
-  )
+  );
 }

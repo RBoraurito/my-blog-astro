@@ -1,5 +1,5 @@
-import clsx from 'clsx'
-import { type ReactNode } from 'react';
+import clsx from "clsx";
+import { type ReactNode } from "react";
 
 interface ProseProps {
   children: ReactNode;
@@ -8,6 +8,6 @@ interface ProseProps {
 
 export function Prose({ children, className }: ProseProps) {
   return (
-    <div className={clsx(className, 'prose dark:prose-invert')}>{children}</div>
-  )
+    <div className={clsx(className, "prose dark:prose-invert")}>{children}</div>
+  );
 }

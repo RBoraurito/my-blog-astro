@@ -1,10 +1,9 @@
 interface SectionProps {
   title: string;
   children: JSX.Element;
-} 
+}
 
 export function Section({ title, children }: SectionProps) {
-
   return (
     <section
       aria-labelledby={title}
@@ -20,5 +19,5 @@ export function Section({ title, children }: SectionProps) {
         <div className="md:col-span-3">{children}</div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,8 @@
 import { Card } from "../Card";
-import type { Article as IArticle } from '../../lib/getAllArticles'
+import type { Article as IArticle } from "../../lib/getAllArticles";
 import { formatDate } from "../../lib/formatDate";
 
-export function Article({ article }: { article: IArticle}) {
+export function Article({ article }: { article: IArticle }) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
@@ -14,5 +14,5 @@ export function Article({ article }: { article: IArticle}) {
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
-  )
+  );
 }

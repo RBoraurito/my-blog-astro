@@ -12,5 +12,5 @@ export function CloseIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }

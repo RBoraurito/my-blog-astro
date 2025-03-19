@@ -1,45 +1,43 @@
 ---
-import Tool from "@components/stack/Tool.astro"
-import ToolsSection from "@components/stack/ToolsSection.astro"
-import { SimpleLayout } from "@components/SimpleLayout.tsx"
+import Tool from "@components/stack/Tool.astro";
+import ToolsSection from "@components/stack/ToolsSection.astro";
+import { SimpleLayout } from "@components/SimpleLayout.tsx";
 
 // @ts-expect-error yaml import
-import content from "@content/stack.yaml"
-import { marked } from 'marked';
+import content from "@content/stack.yaml";
+import { marked } from "marked";
 import { markedUseLink } from "../utils/marked.use.ts";
 import Layout from "@layouts/Default.astro";
 import type { StackPage } from "@type/stack";
 
-markedUseLink(marked)
+markedUseLink(marked);
 
-const {
-  metaTitle,
-  metaDescription,
-  metaImage,
-  title,
-  description,
-  sections
-} = content as unknown as StackPage
+const { metaTitle, metaDescription, metaImage, title, description, sections } =
+  content as unknown as StackPage;
 ---
+
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
-  <SimpleLayout
-    title={title}
-    intro={description}
-  >
+  <SimpleLayout title={title} intro={description}>
     <div class="space-y-20">
-      {sections.map(section => (
-        <ToolsSection key={section.title} title={section.title}>
-          <>
-            {section.tech.map(tech => (
-              <Tool href={tech.link} title={tech.title}>
-                <div set:html={marked.parse(tech.description)}></div>
-              </Tool>
-            ))}
-          </>
-        </ToolsSection>
-      ))}
+      {
+        sections.map((section) => (
+          <ToolsSection key={section.title} title={section.title}>
+            <>
+              {section.tech.map((tech) => (
+                <Tool href={tech.link} title={tech.title}>
+                  <div set:html={marked.parse(tech.description)} />
+                </Tool>
+              ))}
+            </>
+          </ToolsSection>
+        ))
+      }
       <ToolsSection title="Testing">
-        <p class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">Comming soon...</p>
+        <p
+          class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
+        >
+          Comming soon...
+        </p>
       </ToolsSection>
     </div>
   </SimpleLayout>

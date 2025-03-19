@@ -1,66 +1,81 @@
 import { fields, singleton } from "@keystatic/core";
 
 export const projects = singleton({
-  label: 'Projects',
-  path: 'src/content/projects',
+  label: "Projects",
+  path: "src/content/projects",
   schema: {
-    metaTitle: fields.text({label: 'Meta title', validation: {
-      isRequired: true
-    }}),
+    metaTitle: fields.text({
+      label: "Meta title",
+      validation: {
+        isRequired: true,
+      },
+    }),
     metaDescription: fields.text({
       label: "Meta description",
       validation: {
-        isRequired: true
-      }
+        isRequired: true,
+      },
     }),
     metaImage: fields.image({
       label: "Meta image",
-      directory: 'src/images/projects',
-      publicPath: '/projects',
+      directory: "src/images/projects",
+      publicPath: "/projects",
       validation: {
-        isRequired: true
-      }
+        isRequired: true,
+      },
     }),
-    title: fields.text({ label: 'Title', validation: {
-      isRequired: true
-    } }),
-    description: fields.text({ label: 'Description', validation: {
-      isRequired: true
-    } }),
+    title: fields.text({
+      label: "Title",
+      validation: {
+        isRequired: true,
+      },
+    }),
+    description: fields.text({
+      label: "Description",
+      validation: {
+        isRequired: true,
+      },
+    }),
     projects: fields.array(
       fields.object({
-        title: fields.text({label: "Title", validation: {
-          isRequired: true
-        }}),
-        description: fields.text({label: "Description", validation: {
-          isRequired: true
-        }}),
+        title: fields.text({
+          label: "Title",
+          validation: {
+            isRequired: true,
+          },
+        }),
+        description: fields.text({
+          label: "Description",
+          validation: {
+            isRequired: true,
+          },
+        }),
         image: fields.image({
           label: "Image",
-          directory: 'src/images/projects',
-          publicPath: '/projects',
+          directory: "src/images/projects",
+          publicPath: "/projects",
           validation: {
-            isRequired: true
-          }
+            isRequired: true,
+          },
         }),
         linkHref: fields.url({
           label: "Link",
           validation: {
-            isRequired: true
-          }
+            isRequired: true,
+          },
         }),
         linkLabel: fields.text({
           label: "Link label",
           validation: {
-            isRequired: true
-          }
-        })
+            isRequired: true,
+          },
+        }),
       }),
       {
         label: "Projects",
-        slugField: 'title',
-        itemLabel: (props) => props.fields.title.value
-      }
-    )
-  }
-})
+        slugField: "title",
+        itemLabel: (props) => props.fields.title.value,
+      },
+    ),
+  },
+});
