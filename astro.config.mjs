@@ -15,5 +15,5 @@ export default defineConfig({
   },
   output: 'static',
   adapter: vercel(),
-  integrations: [react(), mdx() , markdoc(), keystatic()],
+  integrations: [react(), mdx() , markdoc(), ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()])],
 });
