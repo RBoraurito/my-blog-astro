@@ -86,3 +86,50 @@ projects:
     image: /projects/projects/Alpro Danone (Bejamas)/image.png
     linkHref: https://www.alpro.com
     linkLabel: Alpro Danone
+  - title: Gallery Horse - Next.js Migration (Punto Cero)
+    description: >-
+      This is meant to be the first step of a progressive migration from Nuxt to
+      Next.js. This would be the first step towards it, now this migration is
+      frozen.
+    image: >-
+      /projects/projects/Gallery Horse - Next.js Migration (Punto
+      Cero)/image.png
+    linkHref: https://gh-new-frontpage.vercel.app
+    linkLabel: Gallery Horse
+  - title: Home Be Like (Kation Interactive)
+    description: >-
+      I was a support developer on this project, made with Vue.js and SASS on
+      that time, I help improving the performance, and components/styles
+      organization.
+    image: /projects/projects/Home Be Like (Kation Interactive)/image.png
+    linkHref: https://www.homebelike.com/
+    linkLabel: Home Be Like
+  - title: Conformatic (Kation Interactive)
+    description: >-
+      An e-commerce made with Nuxt 3 and Wordpress, from a Figma design I lead
+      the creation of the components and the way to interact with the API(WP CMS
+      with Woocommerce). I didn't finish the project since I was hired for just
+      the beginning for setting the basis of the project.
+    image: /projects/projects/Conformatic (Kation Interactive)/image.png
+    linkHref: https://www.conformatic.com/
+    linkLabel: Confromatic
+  - title: Allrework (Kation Interactive)
+    description: >-
+      A really creative website made with Nuxt 2 and October CMS for contact
+      form submission. This website had several iterations with what regards to
+      the animations, until it got to the final on appear animation.
+    image: /projects/projects/Allrework (Kation Interactive)/image.png
+    linkHref: https://allrework.com/
+    linkLabel: Allrework
+  - title: Popular Auto Online Deals (Kation Interactive)
+    description: >-
+      This is a site made to funnel sales through online deals posted on the
+      website where you can compare them and filter them by different variables.
+      For the content outside the vehicles we used Strapi to easily edit the
+      content and get the vehicles data from a API that the client provided, all
+      of this was handle by a Nuxt 2 frontent.
+    image: >-
+      /projects/projects/Popular Auto Online Deals (Kation
+      Interactive)/image.png
+    linkHref: https://popularautopr.popular.com/
+    linkLabel: Popular Auto
