@@ -15,6 +15,8 @@ export const home = singleton({
     }),
     metaImage: fields.image({
       label: "Meta image",
+      directory: 'src/images/home',
+      publicPath: '/home',
       validation: {
         isRequired: true
       }

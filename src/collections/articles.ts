@@ -15,6 +15,8 @@ export const articles = singleton({
     }),
     metaImage: fields.image({
       label: "Meta image",
+      directory: 'src/images/articles',
+      publicPath: '/articles',
       validation: {
         isRequired: true
       }

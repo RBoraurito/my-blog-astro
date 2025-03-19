@@ -17,6 +17,8 @@ export const posts = collection({
     }),
     metaImage: fields.image({
       label: "Meta image",
+      directory: 'src/images/posts',
+      publicPath: '/posts',
       validation: {
         isRequired: true
       }

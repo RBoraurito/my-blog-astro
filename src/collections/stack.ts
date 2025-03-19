@@ -15,6 +15,8 @@ export const stack = singleton({
     }),
     metaImage: fields.image({
       label: "Meta image",
+      directory: 'src/images/stack',
+      publicPath: '/stack',
       validation: {
         isRequired: true
       }
