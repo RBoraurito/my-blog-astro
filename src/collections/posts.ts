@@ -35,6 +35,11 @@ export const posts = collection({
     description: fields.text({ label: 'Description', validation: {
       isRequired: true
     } }),
-    content: fields.markdoc({ label: 'Content' }),
+    content: fields.markdoc({ label: 'Content', options: {
+      image: {
+        directory: 'src/images/posts',
+        publicPath: '/src/images/posts/'
+      }
+    } }),
   },
 })
