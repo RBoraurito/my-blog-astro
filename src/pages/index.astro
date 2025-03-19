@@ -1,19 +1,20 @@
 ---
 import Layout from "@layouts/Default.astro";
 
-import {frontmatter as content} from "@content/en/home.md"
+// @ts-expect-error import yaml
+import content from "@content/home.yaml"
 import { marked } from "marked"
-import type { Home } from "@types/home.ts"
+import type { Home } from "src/types/home.ts"
 import { Container } from "@components/Container.tsx";
 import { GitHubIcon, LinkedInIcon } from "@components/SocialIcons.tsx";
-import { Resume } from "@components/home/Resume.tsx";
+import Resume from "@components/home/Resume.astro";
 import { SocialLink } from "@components/home/SocialLink.tsx";
 import { Article } from "@components/home/Article.tsx";
-import type { Article as IArticle } from "../lib/getAllArticles.ts";
+import { getCollection } from "astro:content";
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home
 
-const articles = (await Astro.glob("../content/en/posts/*.md")).slice(0, 4).map(({ frontmatter, file }) => ({...frontmatter, slug: file.split('/').at(-1).replace('.md', '')})) as unknown as IArticle[]
+const articles = (await getCollection('posts')).slice(0, 4) 
 
 ---
 <Layout title={metaTitle} description={metaDescription} image={metaImage} >
@@ -38,12 +39,11 @@ const articles = (await Astro.glob("../content/en/posts/*.md")).slice(0, 4).map(
       </div>
     </div>
   </Container>
-  {/* <Feature /> */}
   <Container className="mt-12 md:mt-14">
     <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
       <div class="flex flex-col gap-16">
         {articles.map((article) => (
-          <Article article={article} />
+          <Article article={{...article.data, ...article}} />
         ))}
       </div>
       <div class="space-y-10 lg:pl-16 xl:pl-24">

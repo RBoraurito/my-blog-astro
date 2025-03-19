@@ -10,28 +10,33 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdoc": "^0.13.1",
     "@astrojs/mdx": "4.2.1",
-    "@astrojs/react": "4.2.1",
-    "@astrojs/tailwind": "6.0.0",
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/vercel": "^8.1.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.46",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
+    "@tailwindcss/vite": "^4.0.14",
+    "@types/react": "^19.0.11",
+    "@types/react-dom": "^19.0.4",
     "astro": "5.5.3",
-    "astro-netlify-cms": "^0.5.4",
     "autoprefixer": "^10.4.15",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
     "marked": "^7.0.5",
-    "netlify-cms-app": "^2.15.72",
     "postcss": "^8.4.29",
     "postcss-focus-visible": "^9.0.0",
-    "react": "^17",
-    "react-dom": "^17",
-    "tailwindcss": "^3.0.24"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.14"
   },
-  "packageManager": "yarn@4.4.1+sha224.fd21d9eb5fba020083811af1d4953acc21eeb9f6ff97efd1b3f9d4de"
+  "packageManager": "yarn@4.4.1+sha224.fd21d9eb5fba020083811af1d4953acc21eeb9f6ff97efd1b3f9d4de",
+  "devDependencies": {
+    "@rollup/plugin-yaml": "^4.1.2"
+  }
 }

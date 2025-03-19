@@ -1,6 +1,7 @@
+import type { ReactNode } from "react";
 
 interface SocialLinkProps {
-  icon: JSX.Element;
+  icon: (props: {className: string})=> ReactNode;
   href: string;
 }
 

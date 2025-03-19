@@ -1,13 +1,14 @@
 ---
-import { Image } from "astro:assets"
+import Image from "@components/Image.astro"
 
 import { Card } from "@components/Card.tsx"
 import { SimpleLayout } from "@components/SimpleLayout.tsx"
 import { LinkIcon } from "@components/projects/LinkIcon.tsx"
 
-import { frontmatter as content } from "@content/en/projects.md"
+// @ts-expect-error import yaml
+import content from "@content/projects.yaml"
 import Layout from "@layouts/Default.astro"
-import type { ProjectsPage } from "@types/projects.ts"
+import type { ProjectsPage } from "src/types/projects"
 
 const {
   metaTitle,

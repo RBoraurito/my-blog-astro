@@ -11,7 +11,7 @@ export interface Article extends MetaData {
 
 export async function importArticle(articleFilename: string): Promise<Article> {
   let { ...attrs } = await import(
-    `../content/en/posts/${articleFilename}`
+    `../content/posts/${articleFilename}`
   )
 
   delete attrs.default
@@ -24,7 +24,7 @@ export async function importArticle(articleFilename: string): Promise<Article> {
 
 export async function getAllArticles(): Promise<Article[]> {
   let articleFilenames = await glob('*.md', {
-    cwd: path.join(process.cwd(), 'content/en/posts'),
+    cwd: path.join(process.cwd(), 'content/posts'),
   })
 
   let articles: Article[] = await Promise.all(articleFilenames.map(importArticle))

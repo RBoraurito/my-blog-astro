@@ -11,32 +11,32 @@ function clamp(number: number, a: number, b: number) {
 
 interface HeaderProps {
   pathname: string;
-  avatar: any;
-  avatarContainer: any;
-  avatarMixed: any;
+  avatar?: any;
+  avatarContainer?: any;
+  avatarMixed?: any;
 }
 
 export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderProps) {
   let isHomePage = pathname === '/'
 
-  let headerRef = useRef(null)
-  let avatarRef = useRef(null)
+  let headerRef = useRef<HTMLDivElement>(null)
+  let avatarRef = useRef<HTMLDivElement>(null)
   let isInitial = useRef(true)
 
   useEffect(() => {
     let downDelay = avatarRef.current?.offsetTop ?? 0
     let upDelay = 64
 
-    function setProperty(property, value) {
+    function setProperty(property: string, value: string) {
       document.documentElement.style.setProperty(property, value)
     }
 
-    function removeProperty(property) {
+    function removeProperty(property:string ) {
       document.documentElement.style.removeProperty(property)
     }
 
     function updateHeaderStyles() {
-      let { top, height } = headerRef.current.getBoundingClientRect()
+      let { top, height } = headerRef.current?.getBoundingClientRect() ?? {top: 0, height: 0}
       let scrollY = clamp(
         window.scrollY,
         0,
@@ -100,7 +100,7 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
       let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
 
       setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
+      setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0')
     }
 
     function updateStyles() {
@@ -132,14 +132,14 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
+              className="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
               style={{ position: 'var(--header-position)' }}
             >
               <div
-                className="top-[var(--avatar-top,theme(spacing.3))] w-full"
+                className="top-(--avatar-top,--spacing(3)) w-full"
                 style={{ position: 'var(--header-inner-position)' } as unknown as CSSProperties}
               >
                 <div className="relative">
@@ -156,7 +156,7 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
           style={{ position: 'var(--header-position)' } as unknown as CSSProperties}
         >
           <Container
-            className="top-[var(--header-top,theme(spacing.6))] w-full"
+            className="top-(--header-top,--spacing(6)) w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
             <div className="relative flex gap-4">

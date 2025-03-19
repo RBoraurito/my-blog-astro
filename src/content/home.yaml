@@ -1,0 +1,40 @@
+metaTitle: Ricardo Boraure - Frontend Developer becoming T Shape
+metaDescription: >-
+  I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m   Frontend
+  Developer specialized in React, Vue.js and its meta   frameworks(Next.js,
+  Nuxt.js, Remix), I love the JAMStack and decoupled   architectures and have a
+  deep interest in new tech and modern web   development."
+metaImage: /home/metaImage.jpg
+date: 2025-03-18
+title: Frontend Developer
+description: "I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m   Frontend Developer specialized in React, Vue.js and its meta   frameworks\_**(Next.js, Nuxt.js, Remix)**, I love\_**JAMStack**, decoupled   architectures, and have a deep interest in new tech and modern web   development."
+jobs:
+  - position: Full Stack Developer
+    isActual: true
+    startDate: 2024-08-18
+    company: VCBiotech
+    image: /home/jobs/VCBiotech/image.png
+  - position: Frontend Developer
+    isActual: false
+    startDate: 2023-06-01
+    endDate: 2024-07-01
+    company: Bejamas
+    image: /home/jobs/Bejamas/image.png
+  - position: Frontend Developer
+    isActual: false
+    startDate: 2022-03-01
+    endDate: 2023-06-01
+    company: Webcat LLC
+    image: /home/jobs/Webcat LLC/image.jpg
+  - position: Frontend Developer
+    isActual: false
+    startDate: 2020-12-18
+    endDate: 2022-06-01
+    company: Kation Interactive
+    image: /home/jobs/Kation Interactive/image.jpeg
+  - position: Frontend Developer
+    isActual: false
+    startDate: 2020-07-01
+    endDate: 2022-04-18
+    company: Punto Cero
+    image: /home/jobs/Punto Cero/image.jpg
