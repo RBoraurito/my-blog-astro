@@ -1,21 +1,16 @@
-import clsx from "clsx";
-import { type ReactNode } from "react";
+import clsx from 'clsx'
+import { type ReactNode } from 'react'
 
 interface SocialLinkProps {
-  className?: string;
-  href?: string;
-  children: ReactNode;
-  icon: any;
+  className?: string
+  href?: string
+  children: ReactNode
+  icon: any
 }
 
-export function SocialLink({
-  className,
-  href,
-  children,
-  icon: Icon,
-}: SocialLinkProps) {
+export function SocialLink({ className, href, children, icon: Icon }: SocialLinkProps) {
   return (
-    <li className={clsx(className, "flex")}>
+    <li className={clsx(className, 'flex')}>
       <a
         href={href}
         target="_blank"
@@ -25,5 +20,5 @@ export function SocialLink({
         <span className="ml-4">{children}</span>
       </a>
     </li>
-  );
+  )
 }

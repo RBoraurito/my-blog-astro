@@ -1,4 +1,4 @@
-import { type SVGAttributes } from "react";
+import { type SVGAttributes } from 'react'
 
 export function CloseIcon(props: SVGAttributes<SVGElement>) {
   return (
@@ -12,5 +12,5 @@ export function CloseIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }

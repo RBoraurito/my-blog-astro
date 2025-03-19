@@ -1,27 +1,27 @@
 ---
-import { ArticleLayout } from "@components/ArticleLayout.tsx";
-import Layout from "@layouts/Default.astro";
-import { type Article as IArticle } from "../../lib/getAllArticles.ts";
-import { getEntry, getCollection, render } from "astro:content";
+import { ArticleLayout } from '@components/ArticleLayout.tsx'
+import Layout from '@layouts/Default.astro'
+import { type Article as IArticle } from '../../lib/getAllArticles.ts'
+import { getEntry, getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
-  const articles = await getCollection("posts");
+  const articles = await getCollection('posts')
   return articles.map((article) => ({
     params: {
       slug: (article as unknown as IArticle).slug,
     },
-  }));
+  }))
 }
 
-const { slug } = Astro.params;
-const article = await getEntry("posts", slug);
+const { slug } = Astro.params
+const article = await getEntry('posts', slug)
 
 if (!article) {
   // Handle Error, for example:
-  throw new Error("Could not find article");
+  throw new Error('Could not find article')
 }
 
-const meta: Omit<IArticle, "content"> = {
+const meta: Omit<IArticle, 'content'> = {
   slug: (article as unknown as IArticle).slug,
   title: article.data.title,
   description: article.data.description,
@@ -30,22 +30,13 @@ const meta: Omit<IArticle, "content"> = {
   metaDescription: article.data.metaDescription,
   metaImage: article.data.metaImage,
   author: article.data.author,
-};
+}
 
-const { Content } = await render(article);
+const { Content } = await render(article)
 ---
 
-<Layout
-  title={meta.metaTitle}
-  description={meta.metaDescription}
-  image={meta.metaImage}
->
-  <ArticleLayout
-    meta={meta}
-    isRssFeed={false}
-    previousPathname="Articles"
-    client:load
-  >
+<Layout title={meta.metaTitle} description={meta.metaDescription} image={meta.metaImage}>
+  <ArticleLayout meta={meta} isRssFeed={false} previousPathname="Articles" client:load>
     <Content />
   </ArticleLayout>
 </Layout>

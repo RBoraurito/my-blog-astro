@@ -1,4 +1,4 @@
-import { type SVGAttributes } from "react";
+import { type SVGAttributes } from 'react'
 
 export function MoonIcon(props: SVGAttributes<SVGElement>) {
   return (
@@ -10,5 +10,5 @@ export function MoonIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }

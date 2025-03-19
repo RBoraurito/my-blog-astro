@@ -1,1 +1,1 @@
-export const JobDateFormat = "MMM, yyyy";
+export const JobDateFormat = 'MMM, yyyy'

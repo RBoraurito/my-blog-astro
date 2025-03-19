@@ -6,5 +6,5 @@ export function LinkIcon(props: any) {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }

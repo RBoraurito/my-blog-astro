@@ -1,36 +1,36 @@
-let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-updateMode();
-darkModeMediaQuery.addEventListener("change", updateModeWithoutTransitions);
-window.addEventListener("storage", updateModeWithoutTransitions);
-document.addEventListener("astro:after-swap", (e) => {
-  updateModeWithoutTransitions();
-});
+let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+updateMode()
+darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
+window.addEventListener('storage', updateModeWithoutTransitions)
+document.addEventListener('astro:after-swap', (e) => {
+  updateModeWithoutTransitions()
+})
 
 function updateMode() {
-  let isSystemDarkMode = darkModeMediaQuery.matches;
+  let isSystemDarkMode = darkModeMediaQuery.matches
   let isDarkMode =
-    window.localStorage.isDarkMode === "true" ||
-    (!("isDarkMode" in window.localStorage) && isSystemDarkMode);
+    window.localStorage.isDarkMode === 'true' ||
+    (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
 
   if (isDarkMode) {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.add('dark')
   } else {
-    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.remove('dark')
   }
 
   if (isDarkMode === isSystemDarkMode) {
-    delete window.localStorage.isDarkMode;
+    delete window.localStorage.isDarkMode
   }
 }
 
 function disableTransitionsTemporarily() {
-  document.documentElement.classList.add("**:transition-none!");
+  document.documentElement.classList.add('**:transition-none!')
   window.setTimeout(() => {
-    document.documentElement.classList.remove("**:transition-none!");
-  }, 0);
+    document.documentElement.classList.remove('**:transition-none!')
+  }, 0)
 }
 
 function updateModeWithoutTransitions() {
-  disableTransitionsTemporarily();
-  updateMode();
+  disableTransitionsTemporarily()
+  updateMode()
 }

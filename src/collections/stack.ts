@@ -1,37 +1,37 @@
-import { fields, singleton } from "@keystatic/core";
+import { fields, singleton } from '@keystatic/core'
 
 export const stack = singleton({
-  label: "Stack",
-  path: "src/content/stack",
+  label: 'Stack',
+  path: 'src/content/stack',
   schema: {
     metaTitle: fields.text({
-      label: "Meta title",
+      label: 'Meta title',
       validation: {
         isRequired: true,
       },
     }),
     metaDescription: fields.text({
-      label: "Meta description",
+      label: 'Meta description',
       validation: {
         isRequired: true,
       },
     }),
     metaImage: fields.image({
-      label: "Meta image",
-      directory: "src/images/stack",
-      publicPath: "/stack",
+      label: 'Meta image',
+      directory: 'src/images/stack',
+      publicPath: '/stack',
       validation: {
         isRequired: true,
       },
     }),
     title: fields.text({
-      label: "Title",
+      label: 'Title',
       validation: {
         isRequired: true,
       },
     }),
     description: fields.text({
-      label: "Description",
+      label: 'Description',
       validation: {
         isRequired: true,
       },
@@ -39,7 +39,7 @@ export const stack = singleton({
     sections: fields.array(
       fields.object({
         title: fields.text({
-          label: "Title",
+          label: 'Title',
           validation: {
             isRequired: true,
           },
@@ -47,31 +47,31 @@ export const stack = singleton({
         tech: fields.array(
           fields.object({
             title: fields.text({
-              label: "Title",
+              label: 'Title',
               validation: {
                 isRequired: true,
               },
             }),
             description: fields.text({
-              label: "Description",
+              label: 'Description',
               validation: {
                 isRequired: true,
               },
             }),
-            url: fields.url({ label: "HREF" }),
+            url: fields.url({ label: 'HREF' }),
           }),
           {
-            label: "Tech",
-            slugField: "title",
+            label: 'Tech',
+            slugField: 'title',
             itemLabel: (props) => props.fields.title.value,
           },
         ),
       }),
       {
-        label: "Sections",
-        slugField: "title",
+        label: 'Sections',
+        slugField: 'title',
         itemLabel: (props) => props.fields.title.value,
       },
     ),
   },
-});
+})

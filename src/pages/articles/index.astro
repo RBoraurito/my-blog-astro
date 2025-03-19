@@ -1,25 +1,23 @@
 ---
-import Article from "@components/articles/Article.astro";
-import { SimpleLayout } from "@components/SimpleLayout.tsx";
+import Article from '@components/articles/Article.astro'
+import { SimpleLayout } from '@components/SimpleLayout.tsx'
 
 // @ts-expect-error yaml import
-import content from "@content/articles.yaml";
-import Layout from "@layouts/Default.astro";
-import type { ArticlesPage } from "src/types/articles";
-import { getCollection } from "astro:content";
-import type { Article as IArticle } from "src/lib/getAllArticles";
+import content from '@content/articles.yaml'
+import Layout from '@layouts/Default.astro'
+import type { ArticlesPage } from 'src/types/articles'
+import { getCollection } from 'astro:content'
+import type { Article as IArticle } from 'src/lib/getAllArticles'
 
 const { title, description, metaTitle, metaDescription, metaImage } =
-  content as unknown as ArticlesPage;
+  content as unknown as ArticlesPage
 
-const articles = await getCollection("posts");
+const articles = await getCollection('posts')
 ---
 
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
   <SimpleLayout title={title} intro={description}>
-    <div
-      class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
-    >
+    <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
       <div class="flex max-w-3xl flex-col space-y-16">
         {
           articles.map((article) => (

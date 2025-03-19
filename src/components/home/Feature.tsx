@@ -1,48 +1,40 @@
-import { CheckIcon } from "@heroicons/react/24/outline";
-import { Container } from "@components/Container.tsx";
+import { CheckIcon } from '@heroicons/react/24/outline'
+import { Container } from '@components/Container.tsx'
 
 const features = [
   {
-    name: "Invite team members",
-    description:
-      "You can manage phone, email and chat conversations all from a single mailbox.",
+    name: 'Invite team members',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
   },
   {
-    name: "List view",
-    description:
-      "You can manage phone, email and chat conversations all from a single mailbox.",
+    name: 'List view',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
   },
   {
-    name: "Keyboard shortcuts",
-    description:
-      "You can manage phone, email and chat conversations all from a single mailbox.",
+    name: 'Keyboard shortcuts',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
   },
   {
-    name: "Calendars",
-    description:
-      "You can manage phone, email and chat conversations all from a single mailbox.",
+    name: 'Calendars',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
   },
   {
-    name: "Notifications",
-    description:
-      "Find what you need with advanced filters, bulk actions, and quick views.",
+    name: 'Notifications',
+    description: 'Find what you need with advanced filters, bulk actions, and quick views.',
   },
   {
-    name: "Boards",
-    description:
-      "Find what you need with advanced filters, bulk actions, and quick views.",
+    name: 'Boards',
+    description: 'Find what you need with advanced filters, bulk actions, and quick views.',
   },
   {
-    name: "Reporting",
-    description:
-      "Find what you need with advanced filters, bulk actions, and quick views.",
+    name: 'Reporting',
+    description: 'Find what you need with advanced filters, bulk actions, and quick views.',
   },
   {
-    name: "Mobile app",
-    description:
-      "Find what you need with advanced filters, bulk actions, and quick views.",
+    name: 'Mobile app',
+    description: 'Find what you need with advanced filters, bulk actions, and quick views.',
   },
-];
+]
 
 export function Feature() {
   return (
@@ -66,5 +58,5 @@ export function Feature() {
         ))}
       </dl>
     </Container>
-  );
+  )
 }

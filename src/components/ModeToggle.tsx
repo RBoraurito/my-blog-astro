@@ -1,25 +1,25 @@
-import { MoonIcon } from "@components/icon/Moon";
-import { SunIcon } from "@components/icon/Sun";
+import { MoonIcon } from '@components/icon/Moon'
+import { SunIcon } from '@components/icon/Sun'
 
 export function ModeToggle() {
   function disableTransitionsTemporarily() {
-    document.documentElement.classList.add("**:transition-none!");
+    document.documentElement.classList.add('**:transition-none!')
     window.setTimeout(() => {
-      document.documentElement.classList.remove("**:transition-none!");
-    }, 0);
+      document.documentElement.classList.remove('**:transition-none!')
+    }, 0)
   }
 
   function toggleMode() {
-    disableTransitionsTemporarily();
+    disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    let isSystemDarkMode = darkModeMediaQuery.matches;
-    let isDarkMode = document.documentElement.classList.toggle("dark");
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode;
+      delete window.localStorage.isDarkMode
     } else {
-      window.localStorage.isDarkMode = isDarkMode;
+      window.localStorage.isDarkMode = isDarkMode
     }
   }
 
@@ -33,5 +33,5 @@ export function ModeToggle() {
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-300 [@media(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-600" />
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media_not_(prefers-color-scheme:dark)]:fill-blue-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400" />
     </button>
-  );
+  )
 }

@@ -1,65 +1,65 @@
-import { collection, fields } from "@keystatic/core";
+import { collection, fields } from '@keystatic/core'
 
 export const posts = collection({
-  label: "Posts",
-  slugField: "metaTitle",
-  path: "src/content/posts/*",
-  format: { contentField: "content" },
+  label: 'Posts',
+  slugField: 'metaTitle',
+  path: 'src/content/posts/*',
+  format: { contentField: 'content' },
   schema: {
     metaTitle: fields.slug({
       name: {
-        label: "Meta title",
+        label: 'Meta title',
         validation: {
           isRequired: true,
         },
       },
     }),
     metaDescription: fields.text({
-      label: "Meta description",
+      label: 'Meta description',
       validation: {
         isRequired: true,
       },
     }),
     metaImage: fields.image({
-      label: "Meta image",
-      directory: "src/images/posts",
-      publicPath: "/posts",
+      label: 'Meta image',
+      directory: 'src/images/posts',
+      publicPath: '/posts',
       validation: {
         isRequired: true,
       },
     }),
     author: fields.text({
-      label: "Author",
+      label: 'Author',
       validation: {
         isRequired: true,
       },
     }),
     publishDate: fields.date({
-      label: "Publish date",
+      label: 'Publish date',
       defaultValue: {
-        kind: "today",
+        kind: 'today',
       },
     }),
     title: fields.text({
-      label: "Title",
+      label: 'Title',
       validation: {
         isRequired: true,
       },
     }),
     description: fields.text({
-      label: "Description",
+      label: 'Description',
       validation: {
         isRequired: true,
       },
     }),
     content: fields.markdoc({
-      label: "Content",
+      label: 'Content',
       options: {
         image: {
-          directory: "src/images/posts",
-          publicPath: "/src/images/posts/",
+          directory: 'src/images/posts',
+          publicPath: '/src/images/posts/',
         },
       },
     }),
   },
-});
+})

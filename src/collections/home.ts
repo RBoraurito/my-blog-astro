@@ -1,43 +1,43 @@
-import { fields, singleton } from "@keystatic/core";
+import { fields, singleton } from '@keystatic/core'
 
 export const home = singleton({
-  label: "Home",
-  path: "src/content/home",
+  label: 'Home',
+  path: 'src/content/home',
   schema: {
     metaTitle: fields.text({
-      label: "Meta title",
+      label: 'Meta title',
       validation: {
         isRequired: true,
       },
     }),
     metaDescription: fields.text({
-      label: "Meta description",
+      label: 'Meta description',
       validation: {
         isRequired: true,
       },
     }),
     metaImage: fields.image({
-      label: "Meta image",
-      directory: "src/images/home",
-      publicPath: "/home",
+      label: 'Meta image',
+      directory: 'src/images/home',
+      publicPath: '/home',
       validation: {
         isRequired: true,
       },
     }),
     date: fields.date({
-      label: "Date",
+      label: 'Date',
       defaultValue: {
-        kind: "today",
+        kind: 'today',
       },
     }),
     title: fields.text({
-      label: "Title",
+      label: 'Title',
       validation: {
         isRequired: true,
       },
     }),
     description: fields.text({
-      label: "Description",
+      label: 'Description',
       validation: {
         isRequired: true,
       },
@@ -45,40 +45,40 @@ export const home = singleton({
     jobs: fields.array(
       fields.object({
         position: fields.text({
-          label: "Position",
+          label: 'Position',
           validation: {
             isRequired: true,
           },
         }),
         isActual: fields.checkbox({
-          label: "Is current",
+          label: 'Is current',
           defaultValue: false,
         }),
         startDate: fields.date({
-          label: "Start date",
+          label: 'Start date',
           validation: {
             isRequired: true,
           },
         }),
-        endDate: fields.date({ label: "End date" }),
+        endDate: fields.date({ label: 'End date' }),
         company: fields.text({
-          label: "Company",
+          label: 'Company',
           validation: {
             isRequired: true,
           },
         }),
         image: fields.image({
-          label: "Image",
-          directory: "src/images/home",
-          publicPath: "/home",
+          label: 'Image',
+          directory: 'src/images/home',
+          publicPath: '/home',
           validation: {
             isRequired: true,
           },
         }),
       }),
       {
-        label: "Authors",
-        slugField: "company",
+        label: 'Authors',
+        slugField: 'company',
         itemLabel: (props) => props.fields.company.value,
         validation: {
           length: {
@@ -88,4 +88,4 @@ export const home = singleton({
       },
     ),
   },
-});
+})

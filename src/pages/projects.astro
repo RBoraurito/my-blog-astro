@@ -1,14 +1,14 @@
 ---
-import Image from "@components/Image.astro";
+import Image from '@components/Image.astro'
 
-import { Card } from "@components/Card.tsx";
-import { SimpleLayout } from "@components/SimpleLayout.tsx";
-import { LinkIcon } from "@components/projects/LinkIcon.tsx";
+import { Card } from '@components/Card.tsx'
+import { SimpleLayout } from '@components/SimpleLayout.tsx'
+import { LinkIcon } from '@components/projects/LinkIcon.tsx'
 
 // @ts-expect-error import yaml
-import content from "@content/projects.yaml";
-import Layout from "@layouts/Default.astro";
-import type { ProjectsPage } from "src/types/projects";
+import content from '@content/projects.yaml'
+import Layout from '@layouts/Default.astro'
+import type { ProjectsPage } from 'src/types/projects'
 
 const {
   metaTitle,
@@ -17,15 +17,12 @@ const {
   title,
   description,
   projects: projectList,
-} = content as unknown as ProjectsPage;
+} = content as unknown as ProjectsPage
 ---
 
 <Layout title={metaTitle} description={metaDescription} image={metaImage}>
   <SimpleLayout title={title} intro={description}>
-    <ul
-      role="list"
-      class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-    >
+    <ul role="list" class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
       {
         projectList.map((project) => (
           <Card as="li">

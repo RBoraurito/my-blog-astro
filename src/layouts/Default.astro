@@ -1,27 +1,23 @@
 ---
-import "../styles/global.css";
-import { Footer } from "@components/Footer.tsx";
-import { Header } from "@components/Header.tsx";
-import AvatarContainer from "@components/AvatarContainer.astro";
-import Avatar from "@components/Avatar.astro";
-import { ViewTransitions } from "astro:transitions";
-import type { ImageMetadata } from "astro";
+import '../styles/global.css'
+import { Footer } from '@components/Footer.tsx'
+import { Header } from '@components/Header.tsx'
+import AvatarContainer from '@components/AvatarContainer.astro'
+import Avatar from '@components/Avatar.astro'
+import { ViewTransitions } from 'astro:transitions'
+import type { ImageMetadata } from 'astro'
 
 interface Props {
-  title: string;
-  description: string;
-  image: string;
+  title: string
+  description: string
+  image: string
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image } = Astro.props
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../images/**/*.{jpg,jpeg,png,webp}",
-);
+const images = import.meta.glob<{ default: ImageMetadata }>('../images/**/*.{jpg,jpeg,png,webp}')
 
-const metaImage = await Object.entries(images).find(([key]) =>
-  key.includes(image),
-)?.[1]?.();
+const metaImage = await Object.entries(images).find(([key]) => key.includes(image))?.[1]?.()
 ---
 
 <!doctype html>
@@ -40,9 +36,7 @@ const metaImage = await Object.entries(images).find(([key]) =>
     <script src="../utils/modeScript"></script>
     <div class="fixed inset-0 flex justify-center sm:px-8">
       <div class="flex w-full max-w-7xl lg:px-8">
-        <div
-          class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-        >
+        <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
         </div>
       </div>
     </div>
@@ -52,8 +46,8 @@ const metaImage = await Object.entries(images).find(([key]) =>
           slot="avatarContainer"
           className="absolute top-3 left-0 origin-left transition-opacity"
           style={{
-            opacity: "var(--avatar-border-opacity, 0)",
-            transform: "var(--avatar-border-transform)",
+            opacity: 'var(--avatar-border-opacity, 0)',
+            transform: 'var(--avatar-border-transform)',
           } as astroHTML.JSX.CSSProperties}
         />
         <Avatar
@@ -61,7 +55,7 @@ const metaImage = await Object.entries(images).find(([key]) =>
           large
           className="block h-16 w-16 origin-left"
           style={{
-            transform: "var(--avatar-image-transform)",
+            transform: 'var(--avatar-image-transform)',
           } as astroHTML.JSX.CSSProperties}
         />
         <AvatarContainer slot="avatarMixed">

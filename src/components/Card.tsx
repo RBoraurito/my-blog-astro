@@ -1,40 +1,34 @@
-import clsx from "clsx";
-import { ChevronRightIcon } from "@components/icon/ChevronRight";
-import React, { type ReactNode } from "react";
+import clsx from 'clsx'
+import { ChevronRightIcon } from '@components/icon/ChevronRight'
+import React, { type ReactNode } from 'react'
 
 interface CardProps {
-  as?: string;
-  className?: string;
-  children: ReactNode;
+  as?: string
+  className?: string
+  children: ReactNode
 }
 
 interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
+  children: ReactNode
 }
-export function Card({
-  as: Component = "div",
-  className,
-  children,
-}: CardProps) {
+export function Card({ as: Component = 'div', className, children }: CardProps) {
   const Wrapper = ({ children, ...props }: WrapperProps) => (
     <Component {...props}>{children}</Component>
-  );
+  )
 
   return (
-    <Wrapper
-      className={clsx(className, "group relative flex flex-col items-start")}
-    >
+    <Wrapper className={clsx(className, 'group relative flex flex-col items-start')}>
       {children}
     </Wrapper>
-  );
+  )
 }
 
 interface CardLinkProps {
-  children: ReactNode;
-  href?: string;
-  target?: string;
-  hasOverallLink?: boolean;
-  [key: string]: any;
+  children: ReactNode
+  href?: string
+  target?: string
+  hasOverallLink?: boolean
+  [key: string]: any
 }
 
 Card.Link = function CardLink({
@@ -54,27 +48,27 @@ Card.Link = function CardLink({
         <span className="relative z-10 hover:underline">{children}</span>
       </a>
     </>
-  );
-};
+  )
+}
 
 interface CardTitleProps {
-  as?: string;
-  href?: string;
-  hasOverallLink?: boolean;
-  children: ReactNode;
-  target?: string;
+  as?: string
+  href?: string
+  hasOverallLink?: boolean
+  children: ReactNode
+  target?: string
 }
 
 Card.Title = function CardTitle({
-  as: Component = "h2",
+  as: Component = 'h2',
   href,
-  target = "",
+  target = '',
   hasOverallLink = true,
   children,
 }: CardTitleProps) {
   const Wrapper = ({ children, ...props }: WrapperProps) => (
     <Component {...props}>{children}</Component>
-  );
+  )
 
   return (
     <Wrapper className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -86,16 +80,16 @@ Card.Title = function CardTitle({
         children
       )}
     </Wrapper>
-  );
-};
+  )
+}
 
 Card.Description = function CardDescription({ children }) {
   return (
     <div className="prose relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </div>
-  );
-};
+  )
+}
 
 Card.Cta = function CardCta({ children }) {
   return (
@@ -106,16 +100,16 @@ Card.Cta = function CardCta({ children }) {
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
     </div>
-  );
-};
+  )
+}
 
 interface CardEyebrowProps extends CardProps {
-  decorate?: boolean;
-  [key: string]: any;
+  decorate?: boolean
+  [key: string]: any
 }
 
 Card.Eyebrow = function CardEyebrow({
-  as: Component = "p",
+  as: Component = 'p',
   decorate = false,
   className,
   children,
@@ -123,28 +117,25 @@ Card.Eyebrow = function CardEyebrow({
 }: CardEyebrowProps) {
   const Wrapper = ({ children, ...props }: WrapperProps) => (
     <Component {...props}>{children}</Component>
-  );
+  )
 
   return (
     <Wrapper
       className={clsx(
         className,
-        "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
-        decorate && "pl-3.5",
+        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
+        decorate && 'pl-3.5',
       )}
       {...props}
     >
       <>
         {decorate && (
-          <span
-            className="absolute inset-y-0 left-0 flex items-center"
-            aria-hidden="true"
-          >
+          <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
             <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
           </span>
         )}
         {children}
       </>
     </Wrapper>
-  );
-};
+  )
+}

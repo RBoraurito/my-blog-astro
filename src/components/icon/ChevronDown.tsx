@@ -1,4 +1,4 @@
-import { type SVGAttributes } from "react";
+import { type SVGAttributes } from 'react'
 
 export function ChevronDownIcon(props: SVGAttributes<SVGElement>) {
   return (
@@ -11,5 +11,5 @@ export function ChevronDownIcon(props: SVGAttributes<SVGElement>) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }

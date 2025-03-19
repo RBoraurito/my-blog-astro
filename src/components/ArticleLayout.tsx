@@ -1,15 +1,15 @@
-import { Container } from "@components/Container";
-import { formatDate } from "../lib/formatDate";
-import { Prose } from "@components/Prose";
-import { ArrowLeftIcon } from "@components/icon/ArrowLeft";
-import { type ReactNode } from "react";
-import type { Article } from "../lib/getAllArticles";
+import { Container } from '@components/Container'
+import { formatDate } from '../lib/formatDate'
+import { Prose } from '@components/Prose'
+import { ArrowLeftIcon } from '@components/icon/ArrowLeft'
+import { type ReactNode } from 'react'
+import type { Article } from '../lib/getAllArticles'
 
 export interface ArticleLayoutProps {
-  children: JSX.Element;
-  meta: Omit<Article, "content">;
-  isRssFeed?: boolean;
-  previousPathname: string;
+  children: JSX.Element
+  meta: Omit<Article, 'content'>
+  isRssFeed?: boolean
+  previousPathname: string
 }
 
 export function ArticleLayout({
@@ -19,7 +19,7 @@ export function ArticleLayout({
   previousPathname,
 }: ArticleLayoutProps) {
   if (isRssFeed) {
-    return children;
+    return children
   }
 
   return (
@@ -56,5 +56,5 @@ export function ArticleLayout({
         </div>
       </Container>
     </>
-  );
+  )
 }

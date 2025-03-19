@@ -1,8 +1,8 @@
-import { Popover, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { ChevronDownIcon } from "@components/icon/ChevronDown";
-import { CloseIcon } from "@components/icon/Close";
-import { MobileNavItem, NavItem } from "@components/NavItem";
+import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { ChevronDownIcon } from '@components/icon/ChevronDown'
+import { CloseIcon } from '@components/icon/Close'
+import { MobileNavItem, NavItem } from '@components/NavItem'
 
 export function MobileNavigation(props) {
   return (
@@ -40,9 +40,7 @@ export function MobileNavigation(props) {
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
                 <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
+              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
@@ -56,7 +54,7 @@ export function MobileNavigation(props) {
         </Transition.Child>
       </Transition.Root>
     </Popover>
-  );
+  )
 }
 
 export function DesktopNavigation(props) {
@@ -69,5 +67,5 @@ export function DesktopNavigation(props) {
         <NavItem href="/stack">Stack</NavItem>
       </ul>
     </nav>
-  );
+  )
 }

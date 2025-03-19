@@ -1,17 +1,13 @@
 ---
-import { Image as AstroImage, type LocalImageProps } from "astro:assets";
+import { Image as AstroImage, type LocalImageProps } from 'astro:assets'
 
 const props = Astro.props as LocalImageProps & {
-  src: string;
-};
+  src: string
+}
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../images/**/*.{jpg,jpeg,png,webp}",
-);
+const images = import.meta.glob<{ default: ImageMetadata }>('../images/**/*.{jpg,jpeg,png,webp}')
 
-const image = Object.entries(images).find(([key]) =>
-  key.includes(props.src),
-)?.[1]();
+const image = Object.entries(images).find(([key]) => key.includes(props.src))?.[1]()
 ---
 
-<AstroImage {...props} src={image ?? ""} />
+<AstroImage {...props} src={image ?? ''} />

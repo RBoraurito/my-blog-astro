@@ -1,4 +1,4 @@
-import { type SVGAttributes } from "react";
+import { type SVGAttributes } from 'react'
 
 export function SunIcon(props: SVGAttributes<SVGElement>) {
   return (
@@ -16,5 +16,5 @@ export function SunIcon(props: SVGAttributes<SVGElement>) {
         fill="none"
       />
     </svg>
-  );
+  )
 }

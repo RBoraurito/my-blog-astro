@@ -1,12 +1,12 @@
 ---
-import { Section } from "@components/Section";
+import { Section } from '@components/Section'
 
 interface Props {
-  title: string;
-  [key: string]: any;
+  title: string
+  [key: string]: any
 }
 
-const { title, ...props } = Astro.props;
+const { title, ...props } = Astro.props
 ---
 
 <Section title={title} {...props}>

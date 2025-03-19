@@ -1,48 +1,48 @@
-import { fields, singleton } from "@keystatic/core";
+import { fields, singleton } from '@keystatic/core'
 
 export const aboutUs = singleton({
-  label: "About us",
-  path: "src/content/about-us",
+  label: 'About us',
+  path: 'src/content/about-us',
   schema: {
     metaTitle: fields.text({
-      label: "Meta title",
+      label: 'Meta title',
       validation: {
         isRequired: true,
       },
     }),
     metaDescription: fields.text({
-      label: "Meta description",
+      label: 'Meta description',
       validation: {
         isRequired: true,
       },
     }),
     metaImage: fields.image({
-      label: "Meta image",
-      directory: "src/images/about-us",
-      publicPath: "/about-us",
+      label: 'Meta image',
+      directory: 'src/images/about-us',
+      publicPath: '/about-us',
       validation: {
         isRequired: true,
       },
     }),
     title: fields.text({
-      label: "Title",
+      label: 'Title',
       validation: {
         isRequired: true,
       },
     }),
     description: fields.text({
-      label: "Description",
+      label: 'Description',
       validation: {
         isRequired: true,
       },
     }),
     image: fields.image({
-      label: "Image",
-      directory: "src/images/about-us",
-      publicPath: "/about-us",
+      label: 'Image',
+      directory: 'src/images/about-us',
+      publicPath: '/about-us',
       validation: {
         isRequired: true,
       },
     }),
   },
-});
+})
