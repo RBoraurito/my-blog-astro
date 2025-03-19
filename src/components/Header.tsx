@@ -132,14 +132,14 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
+              className="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
               style={{ position: 'var(--header-position)' }}
             >
               <div
-                className="top-[var(--avatar-top,theme(spacing.3))] w-full"
+                className="top-(--avatar-top,--spacing(3)) w-full"
                 style={{ position: 'var(--header-inner-position)' } as unknown as CSSProperties}
               >
                 <div className="relative">
@@ -156,7 +156,7 @@ export function Header({pathname, avatar, avatarContainer, avatarMixed}: HeaderP
           style={{ position: 'var(--header-position)' } as unknown as CSSProperties}
         >
           <Container
-            className="top-[var(--header-top,theme(spacing.6))] w-full"
+            className="top-(--header-top,--spacing(6)) w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
             <div className="relative flex gap-4">
