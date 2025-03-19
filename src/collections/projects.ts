@@ -35,9 +35,14 @@ export const projects = singleton({
         description: fields.text({label: "Description", validation: {
           isRequired: true
         }}),
-        image: fields.image({label: "Image", validation: {
-          isRequired: true
-        }}),
+        image: fields.image({
+          label: "Image",
+          directory: 'src/images/projects',
+          publicPath: '/projects',
+          validation: {
+            isRequired: true
+          }
+        }),
         linkHref: fields.url({
           label: "Link",
           validation: {

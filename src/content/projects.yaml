@@ -10,6 +10,6 @@ projects:
     description: >-
       A JAMStack Website build with Nuxt 2, Netlify CMS and Bulma CSS for      
       styling.
-    image: projects/Dental Seguros/image.jpeg
+    image: /projects/projects/Dental Seguros/image.jpg
     linkHref: https://dentalseguros.org/
     linkLabel: Dental Seguros

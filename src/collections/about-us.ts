@@ -29,6 +29,8 @@ export const aboutUs = singleton({
     } }),
     image: fields.image({
       label: "Image",
+      directory: 'src/images/about-us',
+      publicPath: '/about-us',
       validation: {
         isRequired: true
       }

@@ -53,6 +53,8 @@ export const home = singleton({
       }),
       image: fields.image({
         label: "Image",
+        directory: 'src/images/home',
+        publicPath: '/home',
         validation: {
           isRequired: true
         }

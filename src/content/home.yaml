@@ -13,28 +13,28 @@ jobs:
     isActual: true
     startDate: 2024-08-18
     company: VCBiotech
-    image: jobs/VCBiotech/image.png
+    image: /home/jobs/VCBiotech/image.png
   - position: Frontend Developer
     isActual: false
     startDate: 2023-06-01
     endDate: 2024-07-01
     company: Bejamas
-    image: jobs/Bejamas/image.png
+    image: /home/jobs/Bejamas/image.png
   - position: Frontend Developer
     isActual: false
     startDate: 2022-03-01
     endDate: 2023-06-01
     company: Webcat LLC
-    image: jobs/Webcat LLC/image.jpg
+    image: /home/jobs/Webcat LLC/image.jpg
   - position: Frontend Developer
     isActual: false
     startDate: 2020-12-18
     endDate: 2022-06-01
     company: Kation Interactive
-    image: jobs/Kation Interactive/image.jpg
+    image: /home/jobs/Kation Interactive/image.jpeg
   - position: Frontend Developer
     isActual: false
     startDate: 2020-07-01
     endDate: 2022-04-18
     company: Punto Cero
-    image: jobs/Punto Cero/image.jpeg
+    image: /home/jobs/Punto Cero/image.jpg
