@@ -6,10 +6,83 @@ description: >-
   I’ve worked on several projects throught my professional life, but   also I
   like to build Websites/Web Apps for good causes and interesting topics.
 projects:
-  - title: Dental Seguros
+  - title: Hormodose (VCBiotech)
     description: >-
-      A JAMStack Website build with Nuxt 2, Netlify CMS and Bulma CSS for      
-      styling.
-    image: /projects/projects/Dental Seguros/image.jpg
-    linkHref: https://dentalseguros.org/
-    linkLabel: Dental Seguros
+      HRT Calculator that handles patient information, prescription creation,
+      reports, etc. Build with Next.js, TRPC, Postgres, Zod and Drizzle(T3
+      Stack).
+    image: /projects/projects/Hormodose (VCBiotech)/image.png
+    linkHref: https://www.hormodose.io/
+    linkLabel: Hormodose by Sottopelle
+  - title: HTTP Toolkit (Bejamas)
+    description: >-
+      A migration from a Gatsby website into a modern App Router Next.js app,
+      build with Styled components. I worked on this project as the main
+      developer and in close contact with the client.
+    image: /projects/projects/HTTP Toolkit (Bejamas)/image.png
+    linkHref: https://httptoolkit.com/
+    linkLabel: HTTP Toolkit
+  - title: Bennetts Insurance - BikeSocial (Bejamas)
+    description: >-
+      On Bejamas we built this website with Next.js and DatoCMS(Graphql). For
+      the UI we created a shared library for it to be used on other clients
+      project. We also perform a huge migration since we needed to add the blog
+      posts and all the info from the previous website.
+    image: /projects/projects/Bennetts Insurance - BikeSocial (Bejamas)/image.png
+    linkHref: https://www.bennetts.co.uk/bikesocial
+    linkLabel: Bennetts Insurance
+  - title: R3SET Life (Bejamas)
+    description: >-
+      An e-commerce build with DatoCMS(GraphQL), Next.js and a client's made API
+      for handling orders, carts, whishlist, authentication, etc. This was a
+      challenging project since the e-commerce API was built in parallel with
+      the Frontend.
+    image: /projects/projects/R3SET Life (Bejamas)/image.png
+    linkHref: https://www.reset.in/
+    linkLabel: R3SET.in
+  - title: Descope Website (Bejamas)
+    description: >-
+      I maintain this project for at least 1 year. Improved the website
+      performance, restructure the CMS(Contentful) content models for saving the
+      client money by allowing him to use the free plan.
+    image: /projects/projects/Descope Website (Bejamas)/image.png
+    linkHref: https://www.descope.com/
+    linkLabel: Descope
+  - title: O1Labs (Bejamas)
+    description: >-
+      This is a disruptive website made with Next.js and Sanity as CMS. This was
+      made for a blazing fast performance.
+    image: /projects/projects/O1Labs (Bejamas)/image.png
+    linkHref: https://www.o1labs.org/
+    linkLabel: O1Labs
+  - title: Van Raam (Bejamas)
+    description: >-
+      As a maintainer of this really complex website I learn about a lot of
+      things regarding DatoCMS, Next.js, Algolia and Typescript. This website
+      has a multiple languages, Cookies Consent, reusable components on CMS
+      level, and a lot of redirects for a previous website.
+    image: /projects/projects/Van Raam (Bejamas)/image.png
+    linkHref: https://www.vanraam.com/en-gb
+    linkLabel: Van Raam
+  - title: Your Plastic Solutions (Bejamas)
+    description: >-
+      This is a website that is created from Van Raam, this project belongs to a
+      monorepo(Turbo) of 4 projects(including this one), this has its own
+      content but basically is a replica of Van Raam website.
+    image: /projects/projects/Your Plastic Solutions (Bejamas)/image.png
+    linkHref: https://www.yourplasticsolutions.com/nl-nl
+    linkLabel: Your Plastic Solutions
+  - title: State of Maryland - Business (Bejamas)
+    description: >-
+      As a maintainer I work on specific bug fixes and had close interaction
+      with the client. Mainly work on search implementation bugs.
+    image: /projects/projects/State of Maryland - Business (Bejamas)/image.png
+    linkHref: https://business.maryland.gov/
+    linkLabel: Business Maryland
+  - title: Alpro Danone (Bejamas)
+    description: >-
+      I shortly worked on this project doing some components and helping with
+      the content modeling structure.
+    image: /projects/projects/Alpro Danone (Bejamas)/image.png
+    linkHref: https://www.alpro.com
+    linkLabel: Alpro Danone
