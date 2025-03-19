@@ -15,8 +15,6 @@ interface Props {
 
 const { title, description, image } = Astro.props;
 
-const siteUrl = `https://${import.meta.env.VERCEL_URL}`
-
 const images = import.meta.glob<{default: ImageMetadata}>("../images/**/*.{jpg,jpeg,png,webp}")
 
 const metaImage = await Object.entries(images).find(([key]) => key.includes(image))?.[1]?.()
@@ -32,16 +30,6 @@ const metaImage = await Object.entries(images).find(([key]) => key.includes(imag
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			href={`${siteUrl}/rss/feed.xml`}
-		/>
-		<link
-			rel="alternate"
-			type="application/feed+json"
-			href={`${siteUrl}/rss/feed.json`}
-		/>
 		<ViewTransitions />
 	</head>
 	<body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
