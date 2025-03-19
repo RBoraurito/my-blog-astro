@@ -15,7 +15,7 @@ interface Props {
 
 const { title, description, image } = Astro.props;
 
-const siteUrl = import.meta.env.PUBLIC_URL
+const siteUrl = `https://${import.meta.env.VERCEL_URL}`
 
 const images = import.meta.glob<{default: ImageMetadata}>("../images/**/*.{jpg,jpeg,png,webp}")
 
