@@ -1,11 +1,21 @@
 import { config } from '@keystatic/core'
-import { home, posts, aboutUs, stack, projects, articles } from 'src/collections'
+import {
+  home,
+  posts,
+  aboutUs,
+  stack,
+  projects,
+  articles,
+  qrPanDeJamon,
+  instructions,
+} from 'src/collections'
 
 export default config({
   storage: {
     kind: 'local',
   },
   collections: {
+    instructions,
     posts,
   },
   singletons: {
@@ -14,5 +24,6 @@ export default config({
     stack,
     projects,
     articles,
+    qrPanDeJamon,
   },
 })

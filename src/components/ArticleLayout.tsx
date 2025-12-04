@@ -2,11 +2,11 @@ import { Container } from '@components/Container'
 import { formatDate } from '../lib/formatDate'
 import { Prose } from '@components/Prose'
 import { ArrowLeftIcon } from '@components/icon/ArrowLeft'
-import { type ReactNode } from 'react'
 import type { Article } from '../lib/getAllArticles'
+import type { ReactNode } from 'react'
 
 export interface ArticleLayoutProps {
-  children: JSX.Element
+  children: ReactNode,
   meta: Omit<Article, 'content'>
   isRssFeed?: boolean
   previousPathname: string
