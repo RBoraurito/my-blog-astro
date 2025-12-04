@@ -8,13 +8,13 @@ export async function getStaticPaths() {
   const articles = await getCollection('posts')
   return articles.map((article) => ({
     params: {
-      slug: (article as unknown as IArticle).slug,
+      id: article.id,
     },
   }))
 }
 
-const { slug } = Astro.params
-const article = await getEntry('posts', slug)
+const { id } = Astro.params
+const article = await getEntry('posts', id)
 
 if (!article) {
   // Handle Error, for example:
@@ -22,7 +22,7 @@ if (!article) {
 }
 
 const meta: Omit<IArticle, 'content'> = {
-  slug: (article as unknown as IArticle).slug,
+  slug: article.id,
   title: article.data.title,
   description: article.data.description,
   publishDate: article.data.publishDate,
