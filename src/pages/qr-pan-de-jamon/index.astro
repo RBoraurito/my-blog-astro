@@ -1,0 +1,47 @@
+---
+import { Container } from '@components/Container'
+import PanDeJamonLayout from '../../layouts/pan-de-jamon.astro'
+
+// @ts-expect-error import yaml
+import content from '@content/qr-pan-de-jamon.yaml'
+import { getCollection } from 'astro:content'
+import Image from '@components/Image.astro'
+
+const { metaTitle, metaDescription, metaImage } = content as unknown as pageMetaData
+
+const instructions = await getCollection('instructions')
+---
+
+<PanDeJamonLayout title={metaTitle} description={metaDescription} image={metaImage}>
+  <Container className="px-4 py-12 tracking-wide text-amber-50 lg:py-20">
+    <div class="mb-8 lg:mb-10">
+      <h1 class="mb-4 text-center font-mono text-xl tracking-wider lg:mb-6 lg:text-2xl">
+        {metaTitle}
+      </h1>
+      <p class="mx-auto max-w-3xl text-center lg:text-lg">{metaDescription}</p>
+    </div>
+    <h2 class="mb-4 text-center font-mono text-xl tracking-wider uppercase lg:mb-6 lg:text-2xl">
+      Links de productos
+    </h2>
+    <div class="grid gap-4 pb-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      {
+        instructions.map((instruction) => (
+          <a
+            href={`/qr-pan-de-jamon/${instruction.id}`}
+            class="group flex h-full flex-col shadow-zinc-50"
+          >
+            <Image
+              src={instruction.data.metaImage}
+              alt={instruction.data.metaTitle}
+              class="h-40 rounded-t-lg object-cover"
+            />
+            <div class="h-full rounded-b-lg bg-zinc-100/20 p-6 group-hover:bg-zinc-100/30">
+              <h3 class="mb-2 text-lg font-semibold">{instruction.data.metaTitle}</h3>
+              <p class="text-sm">{instruction.data.metaDescription}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</PanDeJamonLayout>

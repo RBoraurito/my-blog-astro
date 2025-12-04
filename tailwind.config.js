@@ -20,6 +20,20 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     typography: (theme) => ({
+      jamon: {
+        css: {
+          '--tw-prose-body': theme('colors.amber.50'),
+          'h2, h3': {
+            color: 'var(--tw-prose-body)',
+            fontFamily: theme('fontFamily.mono'),
+            marginTop: theme('spacing.4'),
+          },
+          h2: {
+            marginTop: theme('spacing.4'),
+          }
+
+        },
+      },
       invert: {
         css: {
           '--tw-prose-body': 'var(--tw-prose-invert-body)',

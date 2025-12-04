@@ -1,0 +1,38 @@
+---
+import '../styles/global.css'
+import { ViewTransitions } from 'astro:transitions'
+import type { ImageMetadata } from 'astro'
+
+interface Props {
+  title: string
+  description: string
+  image: string
+}
+
+const { title, description, image } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../images/**/*.{jpg,jpeg,png,webp}')
+
+const metaImage = await Object.entries(images).find(([key]) => key.includes(image))?.[1]?.()
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="og:image" content={metaImage?.default.src} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-[#3e4a2c]">
+    <div class="relative">
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
