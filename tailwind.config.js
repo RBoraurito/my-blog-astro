@@ -30,8 +30,13 @@ module.exports = {
           },
           h2: {
             marginTop: theme('spacing.4'),
-          }
-
+          },
+          'ol > li::marker': {
+            color: 'var(--tw-prose-body)',
+          },
+          'ul > li::marker': {
+            color: 'var(--tw-prose-body)',
+          },
         },
       },
       invert: {
