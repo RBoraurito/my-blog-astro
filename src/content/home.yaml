@@ -9,9 +9,15 @@ date: 2025-03-18
 title: Frontend Developer
 description: "I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m   Frontend Developer specialized in React, Vue.js and its meta   frameworks\_**(Next.js, Nuxt.js, Remix)**, I love\_**JAMStack**, decoupled   architectures, and have a deep interest in new tech and modern web   development."
 jobs:
-  - position: Full Stack Developer
+  - position: Fullstack Engineer
     isActual: true
+    startDate: 2025-04-02
+    company: Baires Dev
+    image: /home/jobs/Baires Dev/image.png
+  - position: Full Stack Developer
+    isActual: false
     startDate: 2024-08-18
+    endDate: 2025-04-01
     company: VCBiotech
     image: /home/jobs/VCBiotech/image.png
   - position: Frontend Developer
