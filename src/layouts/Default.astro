@@ -4,7 +4,7 @@ import { Footer } from '@components/Footer.tsx'
 import { Header } from '@components/Header.tsx'
 import AvatarContainer from '@components/AvatarContainer.astro'
 import Avatar from '@components/Avatar.astro'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import type { ImageMetadata } from 'astro'
 
 interface Props {
@@ -30,7 +30,7 @@ const metaImage = await Object.entries(images).find(([key]) => key.includes(imag
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
     <script src="../utils/modeScript"></script>
