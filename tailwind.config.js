@@ -25,7 +25,7 @@ module.exports = {
           '--tw-prose-body': theme('colors.amber.50'),
           'h2, h3': {
             color: 'var(--tw-prose-body)',
-            fontFamily: theme('fontFamily.mono'),
+            'font-family': theme('fontFamily.mono'),
             marginTop: theme('spacing.4'),
           },
           h2: {
@@ -257,7 +257,7 @@ module.exports = {
             marginBottom: theme('spacing.20'),
             borderTopWidth: '1px',
             borderColor: 'var(--tw-prose-hr)',
-            '@screen lg': {
+            '@media (min-width: 1024px)': {
               marginLeft: `calc(${theme('spacing.12')} * -1)`,
               marginRight: `calc(${theme('spacing.12')} * -1)`,
             },

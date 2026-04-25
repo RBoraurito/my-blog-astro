@@ -8,8 +8,7 @@ interface NavItemProps {
 }
 
 export function NavItem({ href, children }: NavItemProps) {
-  const pathname = false
-  let isActive = pathname === href
+  const isActive = false
 
   return (
     <li>
