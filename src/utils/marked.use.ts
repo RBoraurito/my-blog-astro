@@ -1,5 +1,3 @@
-import { marked } from 'marked'
-
 export const markedUseLink = (marked: any) => {
   marked.use({
     renderer: {

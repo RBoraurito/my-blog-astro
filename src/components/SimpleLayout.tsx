@@ -1,9 +1,10 @@
 import { Container } from '@components/Container'
+import type { ReactNode } from 'react'
 
 interface SimpleLayoutProps {
   title: string
   intro?: string
-  children?: JSX.Element
+  children?: ReactNode
 }
 
 export function SimpleLayout({ title, intro, children }: SimpleLayoutProps) {

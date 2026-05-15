@@ -6,7 +6,7 @@ import type { Article } from '../lib/getAllArticles'
 import type { ReactNode } from 'react'
 
 export interface ArticleLayoutProps {
-  children: ReactNode,
+  children: ReactNode
   meta: Omit<Article, 'content'>
   isRssFeed?: boolean
   previousPathname: string

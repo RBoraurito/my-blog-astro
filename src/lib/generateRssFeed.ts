@@ -9,6 +9,11 @@ import { marked } from 'marked'
 export async function generateRssFeed() {
   const articles = await getAllArticles()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+
+  if (!siteUrl) {
+    throw new Error('NEXT_PUBLIC_SITE_URL is required to generate the RSS feed.')
+  }
+
   const author = {
     name: 'Ricardo Boraure',
     email: 'ricardoboraure@gmail.com',

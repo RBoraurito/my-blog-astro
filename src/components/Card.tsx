@@ -83,15 +83,7 @@ Card.Title = function CardTitle({
   )
 }
 
-Card.Description = function CardDescription({ children }) {
-  return (
-    <div className="prose relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      {children}
-    </div>
-  )
-}
-
-Card.Cta = function CardCta({ children }) {
+Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
@@ -99,6 +91,14 @@ Card.Cta = function CardCta({ children }) {
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+    </div>
+  )
+}
+
+Card.Description = function CardDescription({ children }: { children: ReactNode }) {
+  return (
+    <div className="prose relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      {children}
     </div>
   )
 }

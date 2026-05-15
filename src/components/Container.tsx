@@ -1,8 +1,9 @@
 import clsx from 'clsx'
+import type { ReactNode } from 'react'
 
 interface ContainerProps {
   className?: string
-  children: JSX.Element
+  children: ReactNode
   [key: string]: any
 }
 
