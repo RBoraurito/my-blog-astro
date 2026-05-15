@@ -1,0 +1,507 @@
+---
+import '../../styles/global.css'
+
+const pageTitle = 'Pagos - La Hornada'
+const pageDescription =
+  'Información bancaria para transferencias de pedidos de La Hornada en República Dominicana.'
+
+const accounts = [
+  {
+    holder: 'Amy Calderón Sang',
+    bank: 'Banco Popular',
+    accountType: 'Cuenta de ahorro',
+    fields: [
+      { label: 'No. de cédula', value: '402-1290887-1', copy: true },
+      { label: 'No. de cuenta', value: '820039840', copy: true },
+    ],
+  },
+  {
+    holder: 'Amy Calderón Sang',
+    bank: 'Qik',
+    accountType: 'Cuenta de ahorro',
+    fields: [{ label: 'No. de cuenta', value: '1003635313', copy: true }],
+  },
+  {
+    holder: 'Ricardo Boraure',
+    bank: 'BHD',
+    accountType: 'Cuenta de ahorros RD$',
+    fields: [
+      { label: 'Documento de identidad', value: 'Pasaporte 139276530', copy: true },
+      {
+        label: 'Correo electrónico',
+        value: 'ricardoboraure@gmail.com',
+        copy: true,
+        compact: true,
+      },
+      { label: 'No. de cuenta', value: '30798300016', copy: true },
+    ],
+  },
+]
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <main class="payment-page">
+      <section class="payment-shell" aria-labelledby="payment-title">
+        <div class="brand-lockup" aria-label="La Hornada">
+          <img class="brand-mark" src="/la-hornada/isotipo.png" alt="" width="1254" height="1254" />
+          <span>La Hornada</span>
+        </div>
+
+        <header class="page-header">
+          <p class="header-note">Transferencias bancarias</p>
+          <h1 id="payment-title">Datos para pagos</h1>
+          <p>
+            Gracias por tu pedido. Puedes transferir a cualquiera de estas cuentas y enviar el
+            comprobante por el canal donde hiciste tu orden.
+          </p>
+        </header>
+
+        <div class="accounts-list" aria-label="Cuentas disponibles">
+          {
+            accounts.map((account) => (
+              <article class="account-card">
+                <div class="account-heading">
+                  <div>
+                    <h2>{account.bank}</h2>
+                    <p>{account.accountType}</p>
+                  </div>
+                  <span>{account.holder}</span>
+                </div>
+
+                <dl class="account-fields">
+                  {account.fields.map((field) => (
+                    <div class="account-field">
+                      <dt>{field.label}</dt>
+                      <dd>
+                        <span class:list={['field-value', field.compact && 'field-value-compact']}>
+                          {field.value}
+                        </span>
+                        {field.copy && (
+                          <button
+                            class="copy-button"
+                            type="button"
+                            data-copy-value={field.value}
+                            aria-label={`Copiar ${field.label}: ${field.value}`}
+                          >
+                            <svg viewBox="0 0 20 20" aria-hidden="true">
+                              <path
+                                d="M7 3.5h7.5a2 2 0 0 1 2 2V13"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-width="1.8"
+                              />
+                              <rect
+                                width="9.5"
+                                height="11.5"
+                                x="3.5"
+                                y="6"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                rx="2"
+                              />
+                            </svg>
+                            <span data-copy-label>Copiar</span>
+                          </button>
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            ))
+          }
+        </div>
+
+        <footer class="payment-footer">
+          <p>Verifica el monto antes de confirmar la transferencia.</p>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      const copyButtons = document.querySelectorAll('[data-copy-value]')
+
+      const setCopyLabel = (button, text) => {
+        const label = button.querySelector('[data-copy-label]')
+
+        if (label) {
+          label.textContent = text
+        }
+      }
+
+      const copyWithFallback = async (value) => {
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(value)
+          return
+        }
+
+        const textarea = document.createElement('textarea')
+        textarea.value = value
+        textarea.setAttribute('readonly', '')
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        textarea.remove()
+      }
+
+      copyButtons.forEach((button) => {
+        button.addEventListener('click', async () => {
+          const value = button.getAttribute('data-copy-value')
+
+          if (!value) {
+            return
+          }
+
+          try {
+            await copyWithFallback(value)
+            setCopyLabel(button, 'Copiado')
+            button.classList.add('is-copied')
+            window.setTimeout(() => {
+              setCopyLabel(button, 'Copiar')
+              button.classList.remove('is-copied')
+            }, 1800)
+          } catch {
+            setCopyLabel(button, 'No copiado')
+            window.setTimeout(() => setCopyLabel(button, 'Copiar'), 1800)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    background: #6d3f1b;
+    color: #fff7ec;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+  }
+
+  :global(button) {
+    font: inherit;
+  }
+
+  .payment-page {
+    min-height: 100svh;
+    padding: 24px 16px;
+  }
+
+  .payment-shell {
+    margin: 0 auto;
+    max-width: 980px;
+  }
+
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 34px;
+    color: #fff4e6;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 9vw, 5rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+
+  .brand-mark {
+    width: clamp(42px, 12vw, 84px);
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .page-header {
+    margin: 0 auto 28px;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .header-note {
+    margin: 0 0 10px;
+    color: #ffd99d;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 12vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.9;
+  }
+
+  .page-header p:last-child {
+    margin: 18px auto 0;
+    max-width: 620px;
+    color: rgba(255, 247, 236, 0.82);
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .accounts-list {
+    display: grid;
+    gap: 18px;
+  }
+
+  .account-card {
+    border: 1px solid rgba(255, 244, 230, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 247, 236, 0.96);
+    box-shadow: 0 24px 70px rgba(35, 17, 8, 0.26);
+    color: #3d2412;
+    overflow: hidden;
+  }
+
+  .account-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px;
+    background: linear-gradient(135deg, #fff8ef 0%, #f5dfc2 100%);
+    border-bottom: 1px solid rgba(91, 55, 28, 0.14);
+  }
+
+  .account-heading h2 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.45rem, 5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.05;
+  }
+
+  .account-heading p {
+    margin: 0;
+    color: #79502c;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .account-heading span {
+    margin: 0;
+    max-width: 190px;
+    color: #4c2c16;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1rem, 3vw, 1.18rem);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: right;
+  }
+
+  .account-fields {
+    margin: 0;
+    padding: 8px 22px 22px;
+  }
+
+  .account-field {
+    display: grid;
+    gap: 8px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(91, 55, 28, 0.12);
+  }
+
+  .account-field:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .account-field dt {
+    color: #8d6542;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .account-field dd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .field-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: clamp(1.15rem, 5vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+  }
+
+  .field-value-compact {
+    font-size: clamp(1rem, 4vw, 1.14rem);
+    line-height: 1.22;
+  }
+
+  .copy-button {
+    display: inline-flex;
+    min-width: 106px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 999px;
+    background: #5c3519;
+    color: #fff7ec;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    padding: 10px 14px;
+    transition:
+      background 180ms ease,
+      transform 180ms ease;
+  }
+
+  .copy-button:hover,
+  .copy-button:focus-visible {
+    background: #7b4924;
+  }
+
+  .copy-button:focus-visible {
+    outline: 3px solid #e0a05d;
+    outline-offset: 3px;
+  }
+
+  .copy-button:active {
+    transform: translateY(1px);
+  }
+
+  .copy-button.is-copied {
+    background: #2f5f45;
+  }
+
+  .copy-button svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+  }
+
+  .payment-footer {
+    margin-top: 24px;
+    color: rgba(255, 247, 236, 0.78);
+    font-size: 0.9rem;
+  }
+
+  .payment-footer p {
+    margin: 0;
+  }
+
+  @media (min-width: 760px) {
+    .payment-page {
+      padding: 52px 28px;
+    }
+
+    .accounts-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .account-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .account-heading,
+    .account-field dd {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .account-heading span {
+      text-align: left;
+    }
+
+    .copy-button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .payment-page {
+      padding: 20px 12px;
+    }
+
+    .brand-lockup {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(1.72rem, 11vw, 3rem);
+      margin-bottom: 26px;
+      text-align: center;
+    }
+
+    .brand-mark {
+      width: clamp(56px, 21vw, 84px);
+    }
+
+    .page-header {
+      margin-bottom: 22px;
+    }
+
+    .account-heading,
+    .account-fields {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    .account-heading,
+    .account-field dd {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .account-heading span {
+      max-width: none;
+      text-align: left;
+    }
+
+    .copy-button {
+      width: 100%;
+    }
+
+    .payment-footer {
+      display: block;
+      text-align: center;
+    }
+
+    .payment-footer p + p {
+      margin-top: 8px;
+    }
+  }
+</style>
